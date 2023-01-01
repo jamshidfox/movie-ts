@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Row, Col } from "reactstrap"
 import { AlignJustify } from "react-feather"
-const Container = styled(Row)`
+const DesktopContainer = styled(Row)`
   align-items: center;
   padding: 0rem 1rem;
   color: white;
@@ -32,10 +32,15 @@ const Logo = styled.div`
   margin: 0rem 1rem;
   color: red;
 `
+const MobileContainer = styled(Row)`
+  color: white;
+  font-size: 10px;
+  background-color: #190401;
+`
 
-const Navbar: React.FC = () => {
+const DesktopNavbar: React.FC = () => {
   return (
-    <Container>
+    <DesktopContainer>
       <Col sm="4">
         <AlignJustify />
       </Col>
@@ -50,8 +55,19 @@ const Navbar: React.FC = () => {
         <Sign>Sign In</Sign>
         <Sign>Sign Up</Sign>
       </SignContainer>
-    </Container>
+    </DesktopContainer>
+  )
+}
+const MobileNavbar: React.FC = () => {
+  return (
+    <MobileContainer>
+      <Logo>M</Logo>
+      <Genres>About</Genres>
+      <Genres>Movies</Genres>
+      <Genres>Series</Genres>
+      <Genres>Upcoming</Genres>
+    </MobileContainer>
   )
 }
 
-export { Navbar }
+export { DesktopNavbar, MobileNavbar }
