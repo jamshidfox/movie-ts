@@ -1,9 +1,11 @@
-/** @format */
-
-import React from "react"
+import BaseLayout from "./components/Layout/BaseLayout"
 
 function App() {
-  return <div className="App">This is first Ts folder</div>
+  return (
+    <>
+      <BaseLayout />
+    </>
+  )
 }
 
 export default App
