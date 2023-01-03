@@ -1,1 +1,1 @@
-export { DesktopNavbar, MobileNavbar } from "./Navbar"
+export { DesktopNavbar } from "./Navbar"
