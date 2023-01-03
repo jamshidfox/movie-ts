@@ -1,9 +1,10 @@
-import BaseLayout from "./components/Layout/BaseLayout"
+import React from "react"
+import RoutesWithSubRoutes from "./components/RouteWithSupRoutes"
 
-function App() {
+function App(props: any) {
   return (
     <>
-      <BaseLayout />
+      <RoutesWithSubRoutes {...props} />
     </>
   )
 }
