@@ -5,11 +5,8 @@ import { AlignJustify } from "react-feather"
 const Container = styled(Row)`
   align-items: center;
   padding: 0rem 1rem;
-  color: white;
-  background-color: #190401;
-  /* @media (max-width: 580px) {
-    width: 15%;
-  } */
+  color: ${({ theme }) => theme.color.lightColor};
+  background-color: ${({ theme }) => theme.background.theme};
 `
 const GenresContainer = styled(Col)`
   display: flex;
