@@ -26,8 +26,9 @@ const CardContainer = styled(Card)`
   }
 `
 const Img = styled(CardImg)`
-  width: 10rem;
   height: 14rem;
+  width: auto;
+  max-width: 12rem;
 `
 const Body = styled(CardBody)`
   padding: 1rem 0rem;
