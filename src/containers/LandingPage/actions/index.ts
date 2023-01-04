@@ -19,3 +19,4 @@ export const getPopularMovies = (id: any, data: any) => {
     })
   }
 }
+
