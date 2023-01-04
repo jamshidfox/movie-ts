@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import NewMovies from "../components/NewMovies"
+import Trailers from "../components/Trailers"
 import * as STATE from "../../../constants/stateNames"
 import { getPopularMovies } from "../actions/index"
 import { useFetchList } from "../../../hooks/useFetchList"
@@ -17,6 +18,7 @@ const LandingPage: React.FC = () => {
   return (
     <Container>
       {popularList.data && <NewMovies {...popularList.data} />}
+      <Trailers />
     </Container>
   )
 }
