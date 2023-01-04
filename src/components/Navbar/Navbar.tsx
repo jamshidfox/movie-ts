@@ -2,32 +2,61 @@ import React from "react"
 import styled from "styled-components"
 import { Row, Col } from "reactstrap"
 import { AlignJustify } from "react-feather"
+import theme from "../../constants/theme"
 const Container = styled(Row)`
   align-items: center;
   padding: 0rem 1rem;
   color: ${({ theme }) => theme.color.lightColor};
   background-color: ${({ theme }) => theme.background.theme};
+  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+  }
 `
 const GenresContainer = styled(Col)`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 580px) {
+  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
     flex-direction: column;
+    align-items: flex-start;
+    margin-top: 25px;
+    padding: 0;
+    height: 60%;
+    justify-content: space-around;
   }
 `
 const Genres = styled.div`
   padding: 0.5rem;
   margin: 0rem 0.5rem;
   color: white;
+  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+    font-family: BenchNine, sans-serif;
+  }
 `
 const SignContainer = styled(Col)`
   display: flex;
   justify-content: flex-end;
+  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-left: 0;
+    height: 20%;
+    font-family: BenchNine, sans-serif;
+  }
   align-items: center;
 `
 const Sign = styled.div`
   margin-left: 1rem;
+  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+    margin: 0;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 8px;
+  }
 `
 const Logo = styled.div`
   font-family: "Lucida Console", Monaco, monospace;
@@ -35,13 +64,21 @@ const Logo = styled.div`
   margin: 0rem 1rem;
   color: red;
 `
+const MenuIcon = styled(Col)`
+  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    padding-left: 0;
+  }
+`
 
 const DesktopNavbar: React.FC = () => {
   return (
     <Container>
-      <Col sm="4">
+      <MenuIcon sm="4">
         <AlignJustify />
-      </Col>
+      </MenuIcon>
       <GenresContainer sm="4">
         <Genres>About</Genres>
         <Genres>Movies</Genres>
