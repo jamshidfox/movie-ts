@@ -7,13 +7,14 @@ import theme from "../../constants/theme"
 const Container = styled(Row)`
   min-height: 40rem;
   background-image: url("https://images4.alphacoders.com/761/76146.jpg");
+  margin: 0;
   background-size: cover;
   color: pink;
   @media (max-width: ${theme.mobile.mobileScreenWidth}) {
     background-image: url("https://s3-alpha-sig.figma.com/img/6115/1284/ab8e0632bc53aad0618e87caa55f64f8?Expires=1673827200&Signature=KcHt4p--11GMpcFvTJTOc-CTMr~FwmYjetSlVxh0KXfjVXXg46CaYHkkdhKAuSClhDMRXchN80KU1O9mauQt80mmLY8kdF2QKUNI9CDkNRlnOZz0TM5aZUtNGvG8ZGzLN4lPjwr1gUruqddWkU-96rbNOpwxaXIk4SEu5l8S7MRa2YKASJutpnPqfUOojGWWeg~dhFGMcwcwhe86KOvRv6nVj~Z0XKSRDnbVcrz0Z1GiG5L6qk~TtdsLciIvFgwTIlZRea41VotT6ryS~JkxYB0kzlA~ilYNUgf-VkmUKg3oIzMf-45U1i6PWxJc~VXTVFXmM9gB8FXmYrPz0i~LuQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    width: 30rem;
+    width: 85%;
   }
   resize: both;
 `
@@ -23,6 +24,7 @@ const InfoContainer = styled(Col)`
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 2rem 0rem 0rem 2rem;
     align-items: center;
   }
 `
@@ -155,7 +157,6 @@ const HeadMovieInfo: React.FC = () => {
           expedita tenetur.
         </Paragraph>
       </InfoContainer>
-      <Col sm="7"></Col>
     </Container>
   )
 }

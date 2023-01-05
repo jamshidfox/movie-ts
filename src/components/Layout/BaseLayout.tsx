@@ -5,6 +5,8 @@ import styled from "styled-components"
 import theme from "../../constants/theme"
 const Container = styled(`div`)`
   color: black;
+  width: 100%;
+  margin: 0;
 `
 const HeaderSection = styled("div")`
   @media (max-width: ${theme.mobile.mobileScreenWidth}) {

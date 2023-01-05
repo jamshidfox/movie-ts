@@ -6,13 +6,15 @@ import theme from "../../constants/theme"
 const Container = styled(Row)`
   align-items: center;
   padding: 0rem 1rem;
+  margin: 0;
   color: ${({ theme }) => theme.color.lightColor};
   background-color: ${({ theme }) => theme.background.theme};
   @media (max-width: ${theme.mobile.mobileScreenWidth}) {
-    width: 130px;
+    width: 15%;
     display: flex;
+    margin: 0;
     flex-direction: column;
-    padding-left: 1rem;
+    padding-left: 0.8rem;
   }
 `
 const GenresContainer = styled(Col)`
@@ -34,6 +36,8 @@ const Genres = styled.div`
   color: white;
   @media (max-width: ${theme.mobile.mobileScreenWidth}) {
     font-family: BenchNine, sans-serif;
+    margin: 0;
+    padding: 0;
   }
 `
 const SignContainer = styled(Col)`
@@ -43,8 +47,8 @@ const SignContainer = styled(Col)`
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    padding-left: 0;
-    height: 20%;
+    padding: 0;
+    height: 25%;
     font-family: BenchNine, sans-serif;
   }
   align-items: center;
@@ -53,9 +57,6 @@ const Sign = styled.div`
   margin-left: 1rem;
   @media (max-width: ${theme.mobile.mobileScreenWidth}) {
     margin: 0;
-    margin-left: 8px;
-    margin-right: 8px;
-    padding: 8px;
   }
 `
 const Logo = styled.div`
@@ -63,13 +64,16 @@ const Logo = styled.div`
   font-size: 2.5rem;
   margin: 0rem 1rem;
   color: red;
+  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+    display: none;
+  }
 `
 const MenuIcon = styled(Col)`
   @media (max-width: ${theme.mobile.mobileScreenWidth}) {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 25px;
-    padding-left: 0;
+    padding: 0;
   }
 `
 

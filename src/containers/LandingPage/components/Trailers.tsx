@@ -3,10 +3,13 @@ import { ChevronRight, ChevronLeft } from "react-feather"
 import styled from "styled-components"
 import trailers from "./trailersData"
 import ReactHlsPlayer from "react-hls-player"
-
+import theme from "../../../constants/theme"
 const Container = styled.div`
   display: flex;
   width: 100%;
+  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+    padding-bottom: 20px;
+  }
   overflow: hidden;
   align-items: center;
 `
@@ -79,7 +82,7 @@ const Trailers: React.FC = () => {
     <Container>
       <PrevButton
         onClick={() => {
-          sideScroll(contentWrapper.current, 25, 2000, -10)
+          sideScroll(contentWrapper.current, 25, 100, -10)
         }}
       >
         <ChevronLeft size={60} />
@@ -87,7 +90,7 @@ const Trailers: React.FC = () => {
       <ContentWrapper ref={contentWrapper}>
         {trailers.map((url, i) => {
           return (
-            <Content>
+            <Content key={i}>
               <ReactHlsPlayer
                 playerRef={playRef}
                 key={i}
