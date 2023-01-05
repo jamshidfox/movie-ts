@@ -6,8 +6,12 @@ import Genres from "../components/Genres"
 import * as STATE from "../../../constants/stateNames"
 import { getPopularMovies, getGenres } from "../actions/index"
 import { useFetchList } from "../../../hooks/useFetchList"
+import theme from "../../../constants/theme"
 
 const Container = styled("div")`
+  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+    padding-top: 2rem;
+  }
   padding: 1rem;
 `
 const LandingPage: React.FC = () => {

@@ -1,7 +1,7 @@
 const primaryColor = "#2f80ed"
 const lightColor = "white"
-
-export default {
+const mobileScreenWidth = "580px"
+let theme = {
   color: {
     primaryColor: primaryColor,
     lightColor: lightColor,
@@ -9,4 +9,8 @@ export default {
   background: {
     theme: "#1B0301",
   },
+  mobile: {
+    mobileScreenWidth: mobileScreenWidth,
+  },
 }
+export default theme
