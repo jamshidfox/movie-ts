@@ -4,3 +4,4 @@ export const API_URL = `${DOMAIN_URL}`
 
 export const TRENDING_MOVIES = `${API_URL}/3/trending/all/day?api_key=${API_KEY}&page=1`
 export const POPULAR_MOVIES = `${API_URL}/3/movie/popular?api_key=${API_KEY}&page=1`
+export const GENRES = `${API_URL}/3/genre/movie/list?api_key=${API_KEY}&language=en-US`

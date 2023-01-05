@@ -10,6 +10,7 @@ export const makeRootReducer = (asyncReducers) => {
     confirmDialog: confirmDialogReducer,
     [STATE.TRENDING_MOVIES]: createThunkReducer(actionTypes.TRENDING_MOVIES),
     [STATE.POPULAR_MOVIES]: createThunkReducer(actionTypes.POPULAR_MOVIES),
+    [STATE.GENRES]: createThunkReducer(actionTypes.GENRES),
     ...asyncReducers,
   })
 }
