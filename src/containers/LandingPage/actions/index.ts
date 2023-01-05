@@ -19,4 +19,16 @@ export const getPopularMovies = (id: any, data: any) => {
     })
   }
 }
+export const getGenres = (id: any, data: any) => {
+  return (dispatch: any, getState: any) => {
+    const payload = axios({ dispatch, getState })
+      .get(sprintf(API.GENRES, id), data)
+      .then(getPayloadFromSuccess)
+      .catch(getPayloadFromError)
 
+    return dispatch({
+      payload,
+      type: actionTypes.GENRES,
+    })
+  }
+}
