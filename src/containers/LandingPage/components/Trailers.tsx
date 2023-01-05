@@ -1,7 +1,8 @@
-import React, { useRef } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import { ChevronRight, ChevronLeft } from "react-feather"
 import styled from "styled-components"
-import photos from "./photos"
+import trailers from "./trailersData"
+import ReactHlsPlayer from "react-hls-player"
 
 const Container = styled.div`
   display: flex;
@@ -10,17 +11,12 @@ const Container = styled.div`
   align-items: center;
 `
 
-interface ContentProps {
-  url: string
-}
-
-const Content = styled.div<ContentProps>`
-  background-image: url(${(props) => props.url});
-  height: 10rem;
-  width: 10rem;
+const Content = styled.div`
+  width: 35rem;
+  height: auto;
+  border-radius: 5px;
   background-size: cover;
   background-position: center;
-  border-radius: 20px;
   flex-shrink: 0;
 `
 
@@ -31,7 +27,7 @@ const ContentWrapper = styled.div`
   border: 5px solid #ffffff;
   border-radius: 10px;
   & > ${Content} {
-    margin: 10px 10px;
+    margin: 2rem;
   }
 `
 
@@ -43,6 +39,7 @@ const PrevButton = styled.div`
   background-color: yellow;
   border-radius: 50%;
   left: 1rem;
+  z-index: 99;
 `
 const NextButton = styled.div`
   display: flex;
@@ -52,40 +49,57 @@ const NextButton = styled.div`
   right: 1rem;
   background-color: yellow;
   border-radius: 50%;
+  z-index: 99;
 `
 
-const sideScroll = (
-  element: HTMLDivElement,
-  speed: number,
-  distance: number,
-  step: number
-) => {
-  let scrollAmount = 0
-  const slideTimer = setInterval(() => {
-    element.scrollLeft += step
-    scrollAmount += Math.abs(step)
-    if (scrollAmount >= distance) {
-      clearInterval(slideTimer)
-    }
-  }, speed)
-}
-
 const Trailers: React.FC = () => {
+  const [hlsUrl, setHlsUrl] = useState(
+    "https://voxe-cdn.s3.eu-north-1.amazonaws.com/trailers/billions-2016-official-trailer-paul-giamatti-damian-lewis-showtime-series/master.m3u8"
+  )
+
+  const sideScroll = (
+    element: HTMLDivElement,
+    speed: number,
+    distance: number,
+    step: number
+  ) => {
+    let scrollAmount = 0
+    const slideTimer = setInterval(() => {
+      element.scrollLeft += step
+      scrollAmount += Math.abs(step)
+      if (scrollAmount >= distance) {
+        clearInterval(slideTimer)
+      }
+    }, speed)
+  }
   const contentWrapper: any = useRef(null)
+  const playRef: any = useRef(null)
 
   return (
     <Container>
       <PrevButton
         onClick={() => {
-          sideScroll(contentWrapper.current, 25, 100, -10)
+          sideScroll(contentWrapper.current, 25, 2000, -10)
         }}
       >
         <ChevronLeft size={60} />
       </PrevButton>
       <ContentWrapper ref={contentWrapper}>
-        {photos.map((url, i) => (
-          <Content url={url} key={`img-${i}`} />
-        ))}
+        {trailers.map((url, i) => {
+          return (
+            <Content>
+              <ReactHlsPlayer
+                playerRef={playRef}
+                key={i}
+                src={url}
+                autoPlay={false}
+                controls={true}
+                width="100%"
+                height="100%"
+              />
+            </Content>
+          )
+        })}
       </ContentWrapper>
       <NextButton
         onClick={() => {
@@ -94,6 +108,14 @@ const Trailers: React.FC = () => {
       >
         <ChevronRight size={60} />
       </NextButton>
+      {/* <ReactHlsPlayer
+        playerRef={contentWrapper}
+        src={`https://voxe-cdn.s3.eu-north-1.amazonaws.com/trailers/billions-2016-official-trailer-paul-giamatti-damian-lewis-showtime-series/master.m3u8`}
+        autoPlay={false}
+        controls={true}
+        width="100%"
+        height="auto"
+      /> */}
     </Container>
   )
 }
