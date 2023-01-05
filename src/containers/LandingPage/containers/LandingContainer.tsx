@@ -3,6 +3,7 @@ import styled from "styled-components"
 import NewMovies from "../components/NewMovies"
 import Trailers from "../components/Trailers"
 import Genres from "../components/Genres"
+import PopularMovies from "../components/PopularMovies"
 import * as STATE from "../../../constants/stateNames"
 import { getPopularMovies, getGenres } from "../actions/index"
 import { useFetchList } from "../../../hooks/useFetchList"
@@ -31,6 +32,7 @@ const LandingPage: React.FC = () => {
       {popularList.data && <NewMovies {...popularList.data} />}
       <Trailers />
       {genresList.data && <Genres {...genresList.data} />}
+      {popularList.data && <PopularMovies {...popularList.data} />}
     </Container>
   )
 }
