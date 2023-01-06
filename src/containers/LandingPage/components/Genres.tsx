@@ -1,11 +1,14 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { Collapse, Button, CardBody, Card } from "reactstrap"
+interface Props {
+  genres: []
+}
 
 const Container = styled("div")``
 
 const CollapsedGenres = styled(Collapse)``
-const Genres: React.FC = (props: any) => {
+const Genres: React.FC<Props> = ({ genres }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => setIsOpen(!isOpen)
@@ -17,7 +20,7 @@ const Genres: React.FC = (props: any) => {
       <CollapsedGenres isOpen={isOpen}>
         <Card>
           <CardBody>
-            {props.genres.map((genre: any) => (
+            {genres.map((genre: any) => (
               <h1>{genre.name}</h1>
             ))}
           </CardBody>

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Card, CardBody, CardImg, CardTitle, CardText } from "reactstrap"
+import { Card, CardBody, CardImg, CardText } from "reactstrap"
 
 const Conatainer = styled("div")`
   display: flex;
@@ -54,7 +54,6 @@ const RatingOfMovie = styled("div")`
 `
 const PopularMovies = (props) => {
   const ImgUrl = "https://image.tmdb.org/t/p/w500"
-  console.log(props.results)
   return (
     <Conatainer>
       <HeadLine>Popular Movies</HeadLine>
