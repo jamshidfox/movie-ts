@@ -11,8 +11,10 @@ const Container = styled("div")`
 // const NotFoundContainer = styled(HomeLayout)`
 //   min-height: 90vh;
 // `
-
-const RouteWithSupRoutes: React.FC = ({ routes }: any) => {
+interface Props {
+  routes: []
+}
+const RouteWithSupRoutes: React.FC<Props> = ({ routes }) => {
   return (
     <Container>
       <Routes>

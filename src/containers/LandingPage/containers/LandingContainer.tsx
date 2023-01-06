@@ -8,6 +8,16 @@ import * as STATE from "../../../constants/stateNames"
 import { getPopularMovies, getGenres } from "../actions/index"
 import { useFetchList } from "../../../hooks/useFetchList"
 import theme from "../../../constants/theme"
+interface PopularList {
+  data?: {
+    results: []
+  }
+}
+interface GenresList {
+  data?: {
+    genres: []
+  }
+}
 
 const Container = styled("div")`
   @media (max-width: ${theme.mobile.mobileScreenWidth}) {
@@ -25,8 +35,9 @@ const LandingPage: React.FC = () => {
     stateName: STATE.GENRES,
   })
 
-  const popularList: any = useFetchList(trendingMovies())
-  const genresList: any = useFetchList(genres())
+  const popularList: PopularList = useFetchList(trendingMovies()) as {}
+
+  const genresList: GenresList = useFetchList(genres()) as {}
   return (
     <Container>
       {popularList.data && <NewMovies {...popularList.data} />}

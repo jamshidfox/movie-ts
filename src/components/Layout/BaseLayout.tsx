@@ -1,3 +1,4 @@
+import React from "react"
 import { DesktopNavbar } from "../Navbar"
 import { MovieInfo } from "../MovieInfo"
 import { Footer } from "../Footer"
@@ -13,8 +14,11 @@ const HeaderSection = styled("div")`
     display: flex;
   }
 `
+interface Props {
+  children: JSX.Element | JSX.Element[]
+}
 
-function BaseLayout({ children }: any) {
+const BaseLayout: React.FC<Props> = ({ children }) => {
   return (
     <Container>
       <HeaderSection>
