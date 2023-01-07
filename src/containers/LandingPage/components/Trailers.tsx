@@ -4,6 +4,7 @@ import styled from "styled-components"
 import trailers from "./trailersData"
 import ReactHlsPlayer from "react-hls-player"
 import theme from "../../../constants/theme"
+
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -56,12 +57,12 @@ const NextButton = styled.button`
   border-radius: 50%;
   z-index: 99;
 `
+const Player: any = styled(ReactHlsPlayer)`
+  width: 100%;
+  height: 100%;
+`
 
 const Trailers: React.FC = () => {
-  const [hlsUrl, setHlsUrl] = useState(
-    "https://voxe-cdn.s3.eu-north-1.amazonaws.com/trailers/billions-2016-official-trailer-paul-giamatti-damian-lewis-showtime-series/master.m3u8"
-  )
-
   const sideScroll = (
     element: HTMLDivElement,
     speed: number,
@@ -72,18 +73,18 @@ const Trailers: React.FC = () => {
     const slideTimer = setInterval(() => {
       element.scrollLeft += step
       scrollAmount += Math.abs(step)
-      if (scrollAmount >= distance) {
+
+      if (scrollAmount == distance) {
         clearInterval(slideTimer)
       }
     }, speed)
   }
   const contentWrapper: any = useRef(null)
-  const playRef: any = useRef(null)
   return (
     <Container>
       <PrevButton
         onClick={() => {
-          sideScroll(contentWrapper.current, 25, 100, -10)
+          sideScroll(contentWrapper.current, 25, 1000, -100)
         }}
       >
         <ChevronLeft style={{ position: "relative", left: "-2px" }} size={60} />
@@ -92,22 +93,14 @@ const Trailers: React.FC = () => {
         {trailers.map((url, i) => {
           return (
             <Content key={i}>
-              <ReactHlsPlayer
-                playerRef={playRef}
-                key={i}
-                src={url}
-                autoPlay={false}
-                controls={true}
-                width="100%"
-                height="100%"
-              />
+              <Player key={i} src={url} autoPlay={false} controls={true} />
             </Content>
           )
         })}
       </ContentWrapper>
       <NextButton
         onClick={() => {
-          sideScroll(contentWrapper.current, 25, 100, 10)
+          sideScroll(contentWrapper.current, 25, 1000, 100)
         }}
       >
         <ChevronRight style={{ position: "relative", left: "2px" }} size={60} />
