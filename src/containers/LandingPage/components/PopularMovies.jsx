@@ -1,5 +1,9 @@
+import React, { useState } from "react"
 import styled from "styled-components"
 import { Card, CardBody, CardImg, CardText } from "reactstrap"
+import * as ROUTES from "../../../constants/routes"
+import { useNavigate } from "react-router-dom"
+import MovieInfoModal from "./MovieInfoModal"
 
 const Container = styled("div")`
   display: flex;
@@ -49,7 +53,7 @@ const HeadLine = styled("h1")`
   font-weight: 610;
   display: flex;
 `
-const RatingOfMoviContainer = styled("div")`
+const RatingOfMovieContainer = styled("div")`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,16 +72,30 @@ const RatingOfMovie = styled("div")`
 `
 
 const PopularMovies = (props) => {
+  const [modal, setModal] = useState(false)
+  const [movieInfo, setMovieInfo] = useState(0)
+  const toggle = () => setModal(!modal)
+
+  const navigate = useNavigate()
+  const handleMovieClick = (movie) => {
+    setMovieInfo(movie)
+    setModal(true)
+    // navigate(`${ROUTES.SEARCHED_MOVIE}?id=${movie.id}`)
+  }
   const ImgUrl = "https://image.tmdb.org/t/p/w500"
   return (
     <Container>
       <HeadLine>Popular Movies</HeadLine>
       <ScrollHorizontal>
         {props.results.map((movie, index) => (
-          <CardContainer id={movie.id} key={index}>
-            <RatingOfMoviContainer>
+          <CardContainer
+            id={movie.id}
+            key={index}
+            onClick={() => handleMovieClick(movie)}
+          >
+            <RatingOfMovieContainer>
               <RatingOfMovie>{movie.voteAverage}</RatingOfMovie>
-            </RatingOfMoviContainer>
+            </RatingOfMovieContainer>
             <Img src={ImgUrl + movie.posterPath} />
             <Body>
               <Text>{movie.title}</Text>
@@ -85,6 +103,7 @@ const PopularMovies = (props) => {
           </CardContainer>
         ))}
       </ScrollHorizontal>
+      <MovieInfoModal toggle={toggle} modal={modal} data={movieInfo} />
     </Container>
   )
 }
