@@ -2,6 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { Card, CardBody, CardImg, CardText } from "reactstrap"
 import theme from "../../../constants/theme"
+
+interface MovieData {
+  results: []
+}
 const Container = styled("div")``
 
 const ScrollHorizontal = styled("div")`
@@ -51,7 +55,7 @@ const Text = styled(CardText)`
   width: 10rem;
 `
 
-const NewMovies: React.FC = ({ results }: any) => {
+const NewMovies: React.FC<MovieData> = ({ results }) => {
   return (
     <Container>
       <ScrollHorizontal>

@@ -2,11 +2,15 @@ import React from "react"
 import { Provider } from "react-redux"
 import RoutesWithSubRoutes from "./components/RouteWithSupRoutes"
 
-function App(props: any) {
-  const store = props.store
+interface Props {
+  store: {} | any
+  routes: []
+}
+
+const App: React.FC<Props> = ({ routes, store }) => {
   return (
     <Provider store={store}>
-      <RoutesWithSubRoutes {...props} />
+      <RoutesWithSubRoutes routes={routes} />
     </Provider>
   )
 }

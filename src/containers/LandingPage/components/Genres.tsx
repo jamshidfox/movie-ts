@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { Collapse, Button, CardBody, Card } from "reactstrap"
-import { ChevronRight } from "react-feather"
+interface Props {
+  genres: []
+}
 
 const Container = styled("div")``
 const GenresContainer = styled("div")`
@@ -21,7 +23,7 @@ const GenresContainer = styled("div")`
 `
 
 const CollapsedGenres = styled(Collapse)``
-const Genres: React.FC = (props: any) => {
+const Genres: React.FC<Props> = ({ genres }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => setIsOpen(!isOpen)
@@ -36,11 +38,13 @@ const Genres: React.FC = (props: any) => {
       </Button>
 
       <CollapsedGenres isOpen={isOpen}>
-        <GenresContainer>
-          {props.genres.map((genre: any) => (
-            <p style={{ marginBottom: "5px" }}>{genre.name.toUpperCase()}</p>
-          ))}
-        </GenresContainer>
+        <Card>
+          <CardBody>
+            {genres.map((genre: any) => (
+              <h1>{genre.name}</h1>
+            ))}
+          </CardBody>
+        </Card>
       </CollapsedGenres>
     </Container>
   )
