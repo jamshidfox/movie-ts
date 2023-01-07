@@ -9,6 +9,7 @@ const Container = styled(`div`)`
   margin: 0;
 `
 const HeaderSection = styled("div")`
+  background-color: red;
   @media (max-width: ${theme.mobile.mobileScreenWidth}) {
     display: flex;
   }

@@ -77,7 +77,6 @@ const Trailers: React.FC = () => {
   }
   const contentWrapper: any = useRef(null)
   const playRef: any = useRef(null)
-
   return (
     <Container>
       <PrevButton
