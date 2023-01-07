@@ -51,6 +51,7 @@ const HeadLine = styled("h1")`
 `
 const RatingOfMoviContainer = styled("div")`
   display: flex;
+  width: 210px;
   align-items: center;
   justify-content: center;
 `
