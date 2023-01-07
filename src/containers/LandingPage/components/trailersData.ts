@@ -4,7 +4,6 @@ const movies = [
   "1917-official-trailer-hd",
   "Catch_Me_if_You_Can_2002_Trailer",
   "Despicable_Me",
-  "garri-potter-i-tainaia-komnata-treiler-1-2002-kinoklipy-khranilishche/",
 ]
 const photos: string[] = movies.map(
   (movie_id) =>
