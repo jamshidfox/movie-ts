@@ -5,6 +5,7 @@ import { AlignJustify } from "react-feather"
 import theme from "../../constants/theme"
 import { getCookie } from "../../utils/cookie"
 import { Search } from "react-feather"
+import { useNavigate } from "react-router-dom"
 
 const Container = styled(Row)`
   align-items: center;
@@ -81,8 +82,11 @@ const MenuIcon = styled(Col)`
 `
 
 const DesktopNavbar: React.FC = () => {
+  const navigate = useNavigate()
   const token = getCookie("token")
-
+  const handleLogoClick = () => {
+    navigate("/")
+  }
   return (
     <Container>
       <MenuIcon sm="4">
@@ -91,7 +95,7 @@ const DesktopNavbar: React.FC = () => {
       <GenresContainer sm="4">
         <Genres>About</Genres>
         <Genres>Movies</Genres>
-        <Logo>M</Logo>
+        <Logo onClick={handleLogoClick}>M</Logo>
         <Genres>Series</Genres>
         <Genres>Upcoming</Genres>
       </GenresContainer>
