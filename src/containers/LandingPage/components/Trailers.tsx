@@ -34,17 +34,19 @@ const ContentWrapper = styled.div`
   }
 `
 
-const PrevButton = styled.div`
+const PrevButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
+  width: 70px;
   background-color: yellow;
   border-radius: 50%;
   left: 1rem;
   z-index: 99;
 `
-const NextButton = styled.div`
+const NextButton = styled.button`
+  width: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +86,7 @@ const Trailers: React.FC = () => {
           sideScroll(contentWrapper.current, 25, 100, -10)
         }}
       >
-        <ChevronLeft size={60} />
+        <ChevronLeft style={{ position: "relative", left: "-2px" }} size={60} />
       </PrevButton>
       <ContentWrapper ref={contentWrapper}>
         {trailers.map((url, i) => {
@@ -108,7 +110,7 @@ const Trailers: React.FC = () => {
           sideScroll(contentWrapper.current, 25, 100, 10)
         }}
       >
-        <ChevronRight size={60} />
+        <ChevronRight style={{ position: "relative", left: "2px" }} size={60} />
       </NextButton>
       {/* <ReactHlsPlayer
         playerRef={contentWrapper}

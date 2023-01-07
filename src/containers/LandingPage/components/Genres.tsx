@@ -9,9 +9,9 @@ interface Props {
 const Container = styled("div")``
 const Paragraph = styled("p")``
 const GenresContainer = styled("div")`
-  background-color: #252525;
   width: 100%;
   padding: 30px 90px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -20,10 +20,32 @@ const GenresContainer = styled("div")`
   font-weight: 400;
   border-radius: 30px;
   color: white;
-  height: 290px;
+  height: 280px;
 `
 
-const CollapsedGenres = styled(Collapse)``
+const CollapsedGenres = styled(Collapse)`
+  width: 100%;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: #252525;
+`
+const GenresButtonsContainer = styled("div")`
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 30%;
+  padding-bottom: 40px;
+`
+const GenresButtons = styled("button")`
+  width: 150px;
+  border-radius: 20px;
+  text-decoration: underline;
+  color: black;
+  height: 40px;
+  background-color: #d9d9d9;
+`
+const CollapsedCountry = styled(Collapse)``
+const CollapsedYear = styled(Collapse)``
 const Genres: React.FC<Props> = ({ genres }) => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -44,6 +66,14 @@ const Genres: React.FC<Props> = ({ genres }) => {
             <Paragraph>{genre.name.toUpperCase()}</Paragraph>
           ))}
         </GenresContainer>
+        <GenresButtonsContainer>
+          <GenresButtons>
+            COUNTRY <ChevronRight style={{ transform: "rotate(90deg)" }} />
+          </GenresButtons>
+          <GenresButtons>
+            YEAR <ChevronRight style={{ transform: "rotate(90deg)" }} />
+          </GenresButtons>
+        </GenresButtonsContainer>
       </CollapsedGenres>
     </Container>
   )

@@ -10,6 +10,7 @@ const ScrollHorizontal = styled("div")`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.4rem;
+  justify-items: center;
 `
 // const ScrollHorizontal = styled(HorizontalScroll)`
 //   margin-top: 1rem;
@@ -46,10 +47,22 @@ const HeadLine = styled("h1")`
   font-weight: 610;
   display: flex;
 `
-const RatingOfMovie = styled("div")`
+const RatingOfMoviContainer = styled("div")`
   display: flex;
   align-items: center;
   justify-content: center;
+`
+const RatingOfMovie = styled("div")`
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 13px;
+  height: 26px;
+  width: 40px;
+  border-radius: 20px;
+  font-size: 18px;
+  background-color: gray; /* later will be come from theme */
+  color: white; /* later will be come from theme */
 `
 
 const PopularMovies = (props) => {
@@ -60,7 +73,9 @@ const PopularMovies = (props) => {
       <ScrollHorizontal>
         {props.results.map((movie, index) => (
           <CardContainer id={movie.id} key={index}>
-            <RatingOfMovie>{movie.voteAverage}</RatingOfMovie>
+            <RatingOfMoviContainer>
+              <RatingOfMovie>{movie.voteAverage}</RatingOfMovie>
+            </RatingOfMoviContainer>
             <Img src={ImgUrl + movie.posterPath} />
             <Body>
               <Text>{movie.title}</Text>
