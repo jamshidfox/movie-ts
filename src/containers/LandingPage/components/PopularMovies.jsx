@@ -8,7 +8,7 @@ const Conatainer = styled("div")`
 `
 const ScrollHorizontal = styled("div")`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.4rem;
   justify-items: center;
 `
@@ -28,12 +28,14 @@ const CardContainer = styled(Card)`
 `
 
 const Img = styled(CardImg)`
-  width: 100%;
+  width: 210px;
+  height: 300px;
+  border-radius: 20px;
   height: auto;
 `
 const Body = styled(CardBody)`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   padding: 1rem 0rem;
   height: 100%;

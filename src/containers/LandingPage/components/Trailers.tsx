@@ -42,7 +42,7 @@ const PrevButton = styled.button`
   width: 70px;
   background-color: yellow;
   border-radius: 50%;
-  left: 1rem;
+  left: 1.3rem;
   z-index: 99;
 `
 const NextButton = styled.button`
@@ -51,7 +51,7 @@ const NextButton = styled.button`
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 1rem;
+  right: 1.3rem;
   background-color: yellow;
   border-radius: 50%;
   z-index: 99;
@@ -112,6 +112,7 @@ const Trailers: React.FC = () => {
       >
         <ChevronRight style={{ position: "relative", left: "2px" }} size={60} />
       </NextButton>
+
       {/* <ReactHlsPlayer
         playerRef={contentWrapper}
         src={`https://voxe-cdn.s3.eu-north-1.amazonaws.com/trailers/billions-2016-official-trailer-paul-giamatti-damian-lewis-showtime-series/master.m3u8`}
