@@ -8,8 +8,9 @@ const Conatainer = styled("div")`
 `
 const ScrollHorizontal = styled("div")`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.4rem;
+  justify-items: center;
 `
 // const ScrollHorizontal = styled(HorizontalScroll)`
 //   margin-top: 1rem;
@@ -27,12 +28,14 @@ const CardContainer = styled(Card)`
 `
 
 const Img = styled(CardImg)`
-  width: 100%;
+  width: 210px;
+  height: 300px;
+  border-radius: 20px;
   height: auto;
 `
 const Body = styled(CardBody)`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   padding: 1rem 0rem;
   height: 100%;
@@ -46,12 +49,24 @@ const HeadLine = styled("h1")`
   font-weight: 610;
   display: flex;
 `
-const RatingOfMovie = styled("div")`
+const RatingOfMoviContainer = styled("div")`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin
 `
+const RatingOfMovie = styled("div")`
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 13px;
+  height: 26px;
+  width: 40px;
+  border-radius: 20px;
+  font-size: 18px;
+  background-color: gray; /* later will be come from theme */
+  color: white; /* later will be come from theme */
+`
+
 const PopularMovies = (props) => {
   const ImgUrl = "https://image.tmdb.org/t/p/w500"
   return (
@@ -60,7 +75,9 @@ const PopularMovies = (props) => {
       <ScrollHorizontal>
         {props.results.map((movie, index) => (
           <CardContainer id={movie.id} key={index}>
-            <RatingOfMovie>{movie.voteAverage}</RatingOfMovie>
+            <RatingOfMoviContainer>
+              <RatingOfMovie>{movie.voteAverage}</RatingOfMovie>
+            </RatingOfMoviContainer>
             <Img src={ImgUrl + movie.posterPath} />
             <Body>
               <Text>{movie.title}</Text>

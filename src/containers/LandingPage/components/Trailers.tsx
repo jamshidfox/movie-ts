@@ -34,22 +34,24 @@ const ContentWrapper = styled.div`
   }
 `
 
-const PrevButton = styled.div`
+const PrevButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
+  width: 70px;
   background-color: yellow;
   border-radius: 50%;
-  left: 1rem;
+  left: 1.3rem;
   z-index: 99;
 `
-const NextButton = styled.div`
+const NextButton = styled.button`
+  width: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 1rem;
+  right: 1.3rem;
   background-color: yellow;
   border-radius: 50%;
   z-index: 99;
@@ -77,7 +79,6 @@ const Trailers: React.FC = () => {
   }
   const contentWrapper: any = useRef(null)
   const playRef: any = useRef(null)
-
   return (
     <Container>
       <PrevButton
@@ -85,7 +86,7 @@ const Trailers: React.FC = () => {
           sideScroll(contentWrapper.current, 25, 100, -10)
         }}
       >
-        <ChevronLeft size={60} />
+        <ChevronLeft style={{ position: "relative", left: "-2px" }} size={60} />
       </PrevButton>
       <ContentWrapper ref={contentWrapper}>
         {trailers.map((url, i) => {
@@ -109,8 +110,9 @@ const Trailers: React.FC = () => {
           sideScroll(contentWrapper.current, 25, 100, 10)
         }}
       >
-        <ChevronRight size={60} />
+        <ChevronRight style={{ position: "relative", left: "2px" }} size={60} />
       </NextButton>
+
       {/* <ReactHlsPlayer
         playerRef={contentWrapper}
         src={`https://voxe-cdn.s3.eu-north-1.amazonaws.com/trailers/billions-2016-official-trailer-paul-giamatti-damian-lewis-showtime-series/master.m3u8`}
