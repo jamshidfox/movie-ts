@@ -1,25 +1,26 @@
 import React, { useState } from "react"
 import styled from "styled-components"
+import { ChevronRight } from "react-feather"
 import { Collapse, Button, CardBody, Card } from "reactstrap"
 interface Props {
   genres: []
 }
 
 const Container = styled("div")``
+const Paragraph = styled("p")``
 const GenresContainer = styled("div")`
   background-color: #252525;
-  width: 95%;
-  margin-left: 2%;
-  padding: 20px;
+  width: 100%;
+  padding: 30px 90px;
   display: flex;
   flex-direction: column;
-  font-size: 24px;
   flex-wrap: wrap;
+  font-size: 24px;
   font-family: "ABeeZee", sans-serif;
   font-weight: 400;
   border-radius: 30px;
   color: white;
-  height: 15vw;
+  height: 290px;
 `
 
 const CollapsedGenres = styled(Collapse)``
@@ -38,13 +39,11 @@ const Genres: React.FC<Props> = ({ genres }) => {
       </Button>
 
       <CollapsedGenres isOpen={isOpen}>
-        <Card>
-          <CardBody>
-            {genres.map((genre: any) => (
-              <h1>{genre.name}</h1>
-            ))}
-          </CardBody>
-        </Card>
+        <GenresContainer>
+          {genres.map((genre: any) => (
+            <Paragraph>{genre.name.toUpperCase()}</Paragraph>
+          ))}
+        </GenresContainer>
       </CollapsedGenres>
     </Container>
   )

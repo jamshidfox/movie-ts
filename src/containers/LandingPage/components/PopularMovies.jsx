@@ -50,8 +50,8 @@ const RatingOfMovie = styled("div")`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin
 `
+
 const PopularMovies = (props) => {
   const ImgUrl = "https://image.tmdb.org/t/p/w500"
   return (
