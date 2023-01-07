@@ -3,6 +3,9 @@ import styled from "styled-components"
 import { Row, Col } from "reactstrap"
 import { AlignJustify } from "react-feather"
 import theme from "../../constants/theme"
+import { getCookie } from "../../utils/cookie"
+import { Search } from "react-feather"
+
 const Container = styled(Row)`
   align-items: center;
   padding: 0rem 1rem;
@@ -78,6 +81,8 @@ const MenuIcon = styled(Col)`
 `
 
 const DesktopNavbar: React.FC = () => {
+  const token = getCookie("token")
+
   return (
     <Container>
       <MenuIcon sm="4">
@@ -90,10 +95,17 @@ const DesktopNavbar: React.FC = () => {
         <Genres>Series</Genres>
         <Genres>Upcoming</Genres>
       </GenresContainer>
-      <SignContainer sm="4">
-        <Sign>Sign In</Sign>
-        <Sign>Sign Up</Sign>
-      </SignContainer>
+      {!token && (
+        <SignContainer sm="4">
+          <Sign>Sign In</Sign>
+          <Sign>Sign Up</Sign>
+        </SignContainer>
+      )}
+      {token && (
+        <SignContainer sm="4">
+          <Search />
+        </SignContainer>
+      )}
     </Container>
   )
 }

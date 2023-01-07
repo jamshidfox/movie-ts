@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Card, CardBody, CardImg, CardText } from "reactstrap"
 
-const Conatainer = styled("div")`
+const Container = styled("div")`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,7 +70,7 @@ const RatingOfMovie = styled("div")`
 const PopularMovies = (props) => {
   const ImgUrl = "https://image.tmdb.org/t/p/w500"
   return (
-    <Conatainer>
+    <Container>
       <HeadLine>Popular Movies</HeadLine>
       <ScrollHorizontal>
         {props.results.map((movie, index) => (
@@ -85,7 +85,7 @@ const PopularMovies = (props) => {
           </CardContainer>
         ))}
       </ScrollHorizontal>
-    </Conatainer>
+    </Container>
   )
 }
 
