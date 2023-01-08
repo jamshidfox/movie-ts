@@ -58,9 +58,9 @@ const NextButton = styled.button`
 `
 
 const Trailers: React.FC = () => {
-  const [hlsUrl, setHlsUrl] = useState(
-    "https://voxe-cdn.s3.eu-north-1.amazonaws.com/trailers/billions-2016-official-trailer-paul-giamatti-damian-lewis-showtime-series/master.m3u8"
-  )
+  // const [hlsUrl, setHlsUrl] = useState(
+  //   "https://voxe-cdn.s3.eu-north-1.amazonaws.com/trailers/billions-2016-official-trailer-paul-giamatti-damian-lewis-showtime-series/master.m3u8"
+  // )
 
   const sideScroll = (
     element: HTMLDivElement,

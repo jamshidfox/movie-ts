@@ -7,7 +7,7 @@ import PopularMovies from "../components/PopularMovies"
 import * as STATE from "../../../constants/stateNames"
 import { getPopularMovies, getGenres } from "../actions/index"
 import { useFetchList } from "../../../hooks/useFetchList"
-import theme from "../../../constants/theme"
+
 interface PopularList {
   data?: {
     results: []
@@ -20,7 +20,7 @@ interface GenresList {
 }
 
 const Container = styled("div")`
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     padding-top: 2rem;
   }
   padding: 1rem;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { DesktopNavbar } from "../Navbar"
 import { Footer } from "../Footer"
 import styled from "styled-components"
-import theme from "../../constants/theme"
+
 import { getCookie } from "../../utils/cookie"
 import ConfirmWithGuestSession from "./ConfirmGuestSession"
 const Container = styled(`div`)`
@@ -11,7 +11,7 @@ const Container = styled(`div`)`
   margin: 0;
 `
 const HeaderSection = styled("div")`
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: flex;
   }
 `

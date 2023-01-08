@@ -77,7 +77,7 @@ const PopularMovies = (props) => {
   const [movieInfo, setMovieInfo] = useState(0)
   const toggle = () => setModal(!modal)
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const handleMovieClick = (movie) => {
     setMovieInfo(movie)
     setModal(true)

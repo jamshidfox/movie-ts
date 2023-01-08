@@ -3,7 +3,7 @@ import { DesktopNavbar } from "../Navbar"
 import { MovieInfo } from "../MovieInfo"
 import { Footer } from "../Footer"
 import styled from "styled-components"
-import theme from "../../constants/theme"
+
 const Container = styled(`div`)`
   color: black;
   width: 100%;
@@ -11,7 +11,7 @@ const Container = styled(`div`)`
 `
 const HeaderSection = styled("div")`
   background-color: red;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: flex;
   }
 `

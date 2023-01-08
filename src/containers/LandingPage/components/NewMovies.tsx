@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Card, CardBody, CardImg, CardText } from "reactstrap"
-import theme from "../../../constants/theme"
 
 interface MovieData {
   results: []
@@ -13,7 +12,7 @@ const ScrollHorizontal = styled("div")`
   flex-direction: row;
   height: 20rem;
   padding: 2rem 0rem 0rem 0rem;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     padding: 0;
   }
   overflow-x: scroll;
@@ -26,7 +25,7 @@ const CardContainer = styled(Card)`
   min-width: auto;
   margin-right: 1rem;
   border: none;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     margin-top: 2rem;
     margin-left: 1rem;
   }
@@ -44,7 +43,7 @@ const Img = styled(CardImg)`
 `
 const Body = styled(CardBody)`
   padding: 1rem 0rem;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     padding-bottom: 0;
   }
   text-align: center;
