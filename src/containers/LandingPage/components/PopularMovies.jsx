@@ -22,12 +22,14 @@ const ScrollHorizontal = styled("div")`
 const CardContainer = styled(Card)`
   display: flex;
   justify-content: center;
-  width: 15rem;
+  width: 210px;
   margin-right: 1rem;
   border: none;
   height: fit-content;
+  transition: 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
+    transform: scale(106%);
   }
 `
 
@@ -46,7 +48,7 @@ const Body = styled(CardBody)`
 `
 const Text = styled(CardText)`
   font-weight: 600;
-  width: 10rem;
+  width: 100%;
 `
 const HeadLine = styled("h1")`
   font-size: 1.5rem;

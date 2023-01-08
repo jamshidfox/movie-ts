@@ -5,13 +5,15 @@ import { Card, CardBody, CardImg, CardText } from "reactstrap"
 interface MovieData {
   results: []
 }
-const Container = styled("div")``
+const Container = styled("div")`
+  display: flex;
+`
 
 const ScrollHorizontal = styled("div")`
   display: flex;
   flex-direction: row;
   height: 20rem;
-  padding: 2rem 0rem 0rem 0rem;
+  padding: 2rem 0rem 2rem 2rem;
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     padding: 0;
   }
@@ -23,23 +25,23 @@ const ScrollHorizontal = styled("div")`
 `
 const CardContainer = styled(Card)`
   min-width: auto;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
   border: none;
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     margin-top: 2rem;
     margin-left: 1rem;
   }
+  transition: all 0.3s ease-out;
   height: fit-content;
   &:hover {
     cursor: pointer;
-    transform: scale(1.1);
-    transition: all 0.5s ease-out;
+    transform: scale(105%);
   }
 `
 const Img = styled(CardImg)`
-  height: 10rem;
+  height: 12rem;
   width: auto;
-  max-width: 12rem;
+  max-width: 20rem;
 `
 const Body = styled(CardBody)`
   padding: 1rem 0rem;
@@ -51,7 +53,7 @@ const Body = styled(CardBody)`
 `
 const Text = styled(CardText)`
   font-weight: 600;
-  width: 10rem;
+  width: 100%;
 `
 
 const NewMovies: React.FC<MovieData> = ({ results }) => {
