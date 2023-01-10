@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { Button } from "reactstrap"
-import { X } from "react-feather"
-import { FaPlay } from "react-icons/fa"
+import { X, Play, Bookmark, Share2, VolumeX } from "react-feather"
+
 interface Props {
   toggle: any
   data: {
@@ -10,7 +10,9 @@ interface Props {
     backdropPath?: string
   }
 }
+
 const Container = styled("div")``
+
 const CloseButton = styled(Button)`
   position: absolute;
   top: 20px;
@@ -65,17 +67,36 @@ const MovieControls = styled("div")`
 const WatchButton = styled(Button)`
   min-width: 180px;
   display: flex;
-  height: 40px;
+  height: 45px;
   align-items: center;
   justify-content: center;
   border: none;
   font-weight: 500;
-  border-radius: 50px;
+  border-radius: 10px;
   background-color: white;
   color: black;
+  margin-right: 12px;
+  :hover {
+    background-color: white;
+    color: black;
+  }
 `
+const BookAndShareButtons = styled("a")`
+  padding: 8px 10px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  margin-right: 12px;
+`
+const MuteOrVolumeButton = styled("a")`
+  padding: 8px 10px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  margin-right: 12px;
+  margin-left: auto;
+`
+
 const PopularMoviesModalHeader: React.FC<Props> = ({ toggle, data }) => {
-  const ImgUrl = "https://image.tmdb.org/t/p/w500"
+  const ImgUrl = ""
 
   //   console.log(typeof data)
   // console.log(data)
@@ -92,9 +113,18 @@ const PopularMoviesModalHeader: React.FC<Props> = ({ toggle, data }) => {
           <h4>{data.title}</h4>
           <MovieControls>
             <WatchButton>
-              <FaPlay color="black" />
+              <Play color="black" style={{ fill: "black" }} />
               Смотреть сейчас
             </WatchButton>
+            <BookAndShareButtons>
+              <Bookmark height={20} style={{ height: "25px", width: "20px" }} />
+            </BookAndShareButtons>
+            <BookAndShareButtons>
+              <Share2 />
+            </BookAndShareButtons>
+            <MuteOrVolumeButton>
+              <VolumeX />
+            </MuteOrVolumeButton>
           </MovieControls>
         </MovieControlsContainer>
       </MovieImageBox>

@@ -8,6 +8,7 @@ interface Props {
   data: {
     title: string
     backdropPath?: string
+    overview: string
   }
 }
 const PopularMoviesModal = styled(Modal)`
@@ -30,6 +31,16 @@ const PopularMoviesModalBody = styled(ModalBody)`
   border-radius: 6px;
 `
 
+const MovieInfo = styled("div")`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px 60px;
+  color: white;
+`
+const MovieInfoDescription = styled("div")``
+const MovieInfoText = styled("div")``
+
 const Container = styled("div")``
 
 const MovieInfoModal: React.FC<Props> = ({ toggle, modal, data }) => {
@@ -40,6 +51,10 @@ const MovieInfoModal: React.FC<Props> = ({ toggle, modal, data }) => {
       <PopularMoviesModal isOpen={modal} toggle={toggle} size="lg">
         <PopularMoviesModalBody toggle={toggle}>
           <PopularMoviesModalHeader toggle={toggle} data={data} />
+          <MovieInfo>
+            <MovieInfoDescription>{data.overview}</MovieInfoDescription>
+            <MovieInfoText></MovieInfoText>
+          </MovieInfo>
         </PopularMoviesModalBody>
         {/* <ModalFooter>
         </ModalFooter> */}
