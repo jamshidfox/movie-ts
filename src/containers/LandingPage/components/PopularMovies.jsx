@@ -79,7 +79,7 @@ const RatingOfMovie = styled("div")`
   color: white; /* later will be come from theme */
 `
 
-const PopularMovies = ({ data }: any) => {
+const PopularMovies = ({ data }) => {
   const [modal, setModal] = useState(false)
   const [movieInfo, setMovieInfo] = useState(0)
   const toggle = () => setModal(!modal)
