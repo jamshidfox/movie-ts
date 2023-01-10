@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Row, Col } from "reactstrap"
-import { PlusCircle, Youtube } from "react-feather"
-import { props } from "ramda"
 
 const Container = styled(Row)`
   min-height: 40rem;
@@ -28,14 +26,14 @@ const InfoContainer = styled(Col)`
     align-items: center;
   }
 `
-const MovieTitle = styled.h1`
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
-    display: none;
-  }
-`
+// const MovieTitle = styled.h1`
+//   font-family: "Comic Sans MS", cursive, sans-serif;
+//   font-size: 2rem;
+//   letter-spacing: 0.1em;
+//   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+//     display: none;
+//   }
+// `
 const RatingContainer = styled.div`
   display: flex;
 

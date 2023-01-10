@@ -13,26 +13,28 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-  width: 400px;
+  display: flex;
+  justify-content: center;
+  width: 430px;
   height: 240px;
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
   margin: 0;
-  margin: 1.5rem 0.4rem;
+  margin: 1.5rem 0.4rem 1.5rem 0rem;
   border-radius: 20px;
   transition: 0.3s ease-in-out;
   background-color: black;
   z-index: 1;
   :hover {
-    transform: scale(103%, 105%);
+    transform: scale(102%, 103%);
   }
 `
 const WatchTrailerContainer = styled("div")`
   background-image: url("https://cdn.voxe.tv/s3/imgs/altered-carbon/altered-carbon_thumbnail_min.webp"); /* later will come from data*/
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  width: 100%;
+  width: 95%;
   height: 100%;
   border-radius: 20px;
   display: flex;

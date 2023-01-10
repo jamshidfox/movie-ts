@@ -9,9 +9,7 @@ import { getPopularMovies, getGenres } from "../actions/index"
 import { useFetchList } from "../../../hooks/useFetchList"
 
 interface PopularList {
-  data?: {
-    results: []
-  }
+  data?: []
 }
 interface GenresList {
   data?: {
@@ -36,14 +34,13 @@ const LandingPage: React.FC = () => {
   })
 
   const popularList: PopularList = useFetchList(trendingMovies()) as {}
-
   const genresList: GenresList = useFetchList(genres()) as {}
   return (
     <Container>
-      {popularList.data && <NewMovies {...popularList.data} />}
-      <Trailers />
-      {genresList.data && <Genres {...genresList.data} />}
-      {popularList.data && <PopularMovies {...popularList.data} />}
+      {popularList.data && <NewMovies data={popularList.data} />}
+      {/* <Trailers /> */}
+      {/* {genresList.data && <Genres {...genresList.data} />} */}
+      {popularList.data && <PopularMovies data={popularList.data} />}
     </Container>
   )
 }

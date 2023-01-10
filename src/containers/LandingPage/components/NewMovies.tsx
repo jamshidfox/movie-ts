@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Card, CardBody, CardImg, CardText } from "reactstrap"
 
 interface MovieData {
-  results: []
+  data: []
 }
 const Container = styled("div")`
   display: flex;
@@ -18,6 +18,7 @@ const ScrollHorizontal = styled("div")`
     padding: 0;
   }
   overflow-x: scroll;
+  overflow-y: hidden;
   ::-webkit-scrollbar {
     width: 0px;
     height: 0px;
@@ -25,7 +26,7 @@ const ScrollHorizontal = styled("div")`
 `
 const CardContainer = styled(Card)`
   min-width: auto;
-  margin-right: 1.5rem;
+  margin-right: 1.1rem;
   border: none;
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     margin-top: 2rem;
@@ -35,7 +36,7 @@ const CardContainer = styled(Card)`
   height: fit-content;
   &:hover {
     cursor: pointer;
-    transform: scale(105%);
+    transform: scale(103%);
   }
 `
 const Img = styled(CardImg)`
@@ -56,15 +57,13 @@ const Text = styled(CardText)`
   width: 100%;
 `
 
-const NewMovies: React.FC<MovieData> = ({ results }) => {
+const NewMovies = ({ data }: any) => {
   return (
     <Container>
       <ScrollHorizontal>
-        {results.map((movie: any, index: number) => (
+        {data.map((movie: any, index: number) => (
           <CardContainer id={index} key={index}>
-            <Img
-              src={`https://image.tmdb.org/t/p/w500/${movie.backdropPath}`}
-            />
+            <Img src={`${movie.backdropPath}`} />
             <Body>
               <Text>{movie.title}</Text>
             </Body>
