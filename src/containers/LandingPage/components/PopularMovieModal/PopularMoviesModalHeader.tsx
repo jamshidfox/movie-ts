@@ -39,7 +39,7 @@ const MovieImageBox = styled("div")<ImageProps>`
   }};
   /* box-shadow: inset 0px -20px 15px 1px #10272f; */
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   border-radius: 6px;
   width: 100%;
   height: 400px;
