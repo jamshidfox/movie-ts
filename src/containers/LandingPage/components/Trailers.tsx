@@ -1,14 +1,11 @@
-import React, { useRef, useState, useEffect } from "react"
+import React, { useRef } from "react"
 import { ChevronRight, ChevronLeft } from "react-feather"
 import styled from "styled-components"
 import trailers from "./trailersData"
-import ReactHlsPlayer from "react-hls-player"
-import theme from "../../../constants/theme"
-
 const Container = styled.div`
   display: flex;
   width: 100%;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     padding-bottom: 20px;
   }
   overflow: hidden;
@@ -16,23 +13,33 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-  width: 35rem;
-  height: auto;
-  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  width: 430px;
+  height: 240px;
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
-`
-
-const ContentWrapper = styled.div`
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-  border: 5px solid #ffffff;
-  border-radius: 10px;
-  & > ${Content} {
-    margin: 2rem;
+  margin: 0;
+  margin: 1.5rem 0.4rem 1.5rem 0rem;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+  background-color: black;
+  z-index: 1;
+  :hover {
+    transform: scale(102%, 103%);
   }
+`
+const WatchTrailerContainer = styled("div")`
+  background-image: url("https://cdn.voxe.tv/s3/imgs/altered-carbon/altered-carbon_thumbnail_min.webp"); /* later will come from data*/
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 95%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const PrevButton = styled.button`
@@ -41,6 +48,7 @@ const PrevButton = styled.button`
   align-items: center;
   position: absolute;
   width: 70px;
+  animation: btn 1s;
   background-color: yellow;
   border-radius: 50%;
   left: 1.3rem;
@@ -57,10 +65,18 @@ const NextButton = styled.button`
   border-radius: 50%;
   z-index: 99;
 `
-const Player: any = styled(ReactHlsPlayer)`
+const ContentWrapper = styled.div`
+  display: flex;
+  overflow: hidden;
   width: 100%;
-  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  height: 350px;
+  border: 5px solid #ffffff;
+  scroll-behavior: smooth;
+  border-radius: 10px;
 `
+// const Video
 
 const Trailers: React.FC = () => {
   const sideScroll = (
@@ -73,8 +89,7 @@ const Trailers: React.FC = () => {
     const slideTimer = setInterval(() => {
       element.scrollLeft += step
       scrollAmount += Math.abs(step)
-
-      if (scrollAmount == distance) {
+      if (scrollAmount === distance) {
         clearInterval(slideTimer)
       }
     }, speed)
@@ -84,7 +99,7 @@ const Trailers: React.FC = () => {
     <Container>
       <PrevButton
         onClick={() => {
-          sideScroll(contentWrapper.current, 25, 1000, -100)
+          sideScroll(contentWrapper.current, 50, 1000, -1000)
         }}
       >
         <ChevronLeft style={{ position: "relative", left: "-2px" }} size={60} />
@@ -93,14 +108,14 @@ const Trailers: React.FC = () => {
         {trailers.map((url, i) => {
           return (
             <Content key={i}>
-              <Player key={i} src={url} autoPlay={false} controls={true} />
+              <WatchTrailerContainer></WatchTrailerContainer>
             </Content>
           )
         })}
       </ContentWrapper>
       <NextButton
         onClick={() => {
-          sideScroll(contentWrapper.current, 25, 1000, 100)
+          sideScroll(contentWrapper.current, 50, 1000, 1000)
         }}
       >
         <ChevronRight style={{ position: "relative", left: "2px" }} size={60} />

@@ -1,8 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import ReactHlsPlayer from "react-hls-player"
 import styled from "styled-components"
-
-const ReactDOM = require("react-dom")
 
 const Player: any = styled(ReactHlsPlayer)`
   width: 100vw;

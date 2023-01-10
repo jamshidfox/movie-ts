@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { ChevronRight } from "react-feather"
-import { Collapse, Button, CardBody, Card } from "reactstrap"
+import { Collapse, Button } from "reactstrap"
 interface Props {
   genres: []
 }
@@ -44,8 +44,8 @@ const GenresButtons = styled("button")`
   height: 40px;
   background-color: #d9d9d9;
 `
-const CollapsedCountry = styled(Collapse)``
-const CollapsedYear = styled(Collapse)``
+// const CollapsedCountry = styled(Collapse)``
+// const CollapsedYear = styled(Collapse)``
 const Genres: React.FC<Props> = ({ genres }) => {
   const [isOpen, setIsOpen] = useState(false)
 

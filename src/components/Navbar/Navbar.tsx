@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Row, Col } from "reactstrap"
 import { AlignJustify } from "react-feather"
-import theme from "../../constants/theme"
 import { getCookie } from "../../utils/cookie"
 import { Search } from "react-feather"
 import { useNavigate } from "react-router-dom"
@@ -13,7 +12,7 @@ const Container = styled(Row)`
   margin: 0;
   color: ${({ theme }) => theme.color.lightColor};
   background-color: ${({ theme }) => theme.background.theme};
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     width: 15%;
     display: flex;
     margin: 0;
@@ -25,7 +24,7 @@ const GenresContainer = styled(Col)`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     flex-direction: column;
     align-items: flex-start;
     margin-top: 25px;
@@ -38,7 +37,7 @@ const Genres = styled.div`
   padding: 0.5rem;
   margin: 0rem 0.5rem;
   color: white;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     font-family: BenchNine, sans-serif;
     margin: 0;
     padding: 0;
@@ -47,7 +46,7 @@ const Genres = styled.div`
 const SignContainer = styled(Col)`
   display: flex;
   justify-content: flex-end;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
@@ -59,7 +58,7 @@ const SignContainer = styled(Col)`
 `
 const Sign = styled.div`
   margin-left: 1rem;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     margin: 0;
   }
 `
@@ -68,12 +67,12 @@ const Logo = styled.div`
   font-size: 2.5rem;
   margin: 0rem 1rem;
   color: red;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: none;
   }
 `
 const MenuIcon = styled(Col)`
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: flex;
     justify-content: flex-start;
     margin-top: 25px;

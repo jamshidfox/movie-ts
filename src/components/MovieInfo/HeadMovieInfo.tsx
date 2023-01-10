@@ -1,9 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Row, Col } from "reactstrap"
-import { PlusCircle, Youtube } from "react-feather"
-import theme from "../../constants/theme"
-import { props } from "ramda"
 
 const Container = styled(Row)`
   min-height: 40rem;
@@ -12,7 +9,7 @@ const Container = styled(Row)`
   margin: 0;
   background-size: cover;
   color: pink;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 85%;
@@ -21,7 +18,7 @@ const Container = styled(Row)`
 `
 const InfoContainer = styled(Col)`
   padding: 2rem 0rem 0rem 3rem;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -29,14 +26,14 @@ const InfoContainer = styled(Col)`
     align-items: center;
   }
 `
-const MovieTitle = styled.h1`
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
-    display: none;
-  }
-`
+// const MovieTitle = styled.h1`
+//   font-family: "Comic Sans MS", cursive, sans-serif;
+//   font-size: 2rem;
+//   letter-spacing: 0.1em;
+//   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+//     display: none;
+//   }
+// `
 const RatingContainer = styled.div`
   display: flex;
 
@@ -104,7 +101,7 @@ const TypeOfMovieEl = styled.div`
 `
 const WatchContainer = styled.div`
   margin-top: 2rem;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: none;
   }
 `
@@ -112,7 +109,7 @@ const Paragraph = styled.p`
   margin-top: 2rem;
   width: 450px;
   font-size: 12px;
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: none;
   }
 `
@@ -129,7 +126,7 @@ const TitleImageBox = styled("div")`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     margin-top: 300px;
   }
 `

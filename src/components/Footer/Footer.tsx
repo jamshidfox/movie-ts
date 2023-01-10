@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Container = styled("div")`
   height: 100px;
-  background-color: #1f0301;
+  background-color: #1f0301; /* later from theme */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,11 +12,14 @@ const Navigation = styled("div")`
   display: flex;
   justify-content: center;
 `
+const NavigatinText = styled("p")`
+  color: white;
+`
 const Footer: React.FC = () => {
   return (
     <Container>
       <Navigation>
-        <h3>Salom</h3>
+        <NavigatinText>M CINEMA &#169; 2021-2022</NavigatinText>
       </Navigation>
     </Container>
   )

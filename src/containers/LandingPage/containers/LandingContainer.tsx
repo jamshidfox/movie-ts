@@ -7,11 +7,9 @@ import PopularMovies from "../components/PopularMovies"
 import * as STATE from "../../../constants/stateNames"
 import { getPopularMovies, getGenres } from "../actions/index"
 import { useFetchList } from "../../../hooks/useFetchList"
-import theme from "../../../constants/theme"
+
 interface PopularList {
-  data?: {
-    results: []
-  }
+  data?: []
 }
 interface GenresList {
   data?: {
@@ -20,7 +18,7 @@ interface GenresList {
 }
 
 const Container = styled("div")`
-  @media (max-width: ${theme.mobile.mobileScreenWidth}) {
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     padding-top: 2rem;
   }
   padding: 1rem;
@@ -36,14 +34,13 @@ const LandingPage: React.FC = () => {
   })
 
   const popularList: PopularList = useFetchList(trendingMovies()) as {}
-
   const genresList: GenresList = useFetchList(genres()) as {}
   return (
     <Container>
-      {popularList.data && <NewMovies {...popularList.data} />}
-      <Trailers />
-      {genresList.data && <Genres {...genresList.data} />}
-      {popularList.data && <PopularMovies {...popularList.data} />}
+      {popularList.data && <NewMovies data={popularList.data} />}
+      {/* <Trailers /> */}
+      {/* {genresList.data && <Genres {...genresList.data} />} */}
+      {popularList.data && <PopularMovies data={popularList.data} />}
     </Container>
   )
 }
