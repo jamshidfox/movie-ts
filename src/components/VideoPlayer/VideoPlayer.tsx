@@ -5,10 +5,16 @@ import styled from "styled-components"
 const Player: any = styled(ReactHlsPlayer)`
   width: 100vw;
   height: max-content;
+  border: none;
+  outline: 0;
 `
 const Container = styled("div")`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100vh;
+  background-color: black;
 `
 interface Props {
   url: string

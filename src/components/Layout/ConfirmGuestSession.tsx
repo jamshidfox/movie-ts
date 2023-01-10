@@ -17,7 +17,7 @@ const ConfirmWithGuestSession = () => {
 
   return (
     <Container>
-      <button onClick={handleClick}>Click mE</button>
+      <button onClick={handleClick}>Click me</button>
     </Container>
   )
 }

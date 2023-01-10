@@ -33,10 +33,9 @@ const CardContainer = styled(Card)`
 `
 
 const Img = styled(CardImg)`
-  width: 210px;
   height: 300px;
   border-radius: 20px;
-  height: auto;
+  object-fit: cover;
 `
 const Body = styled(CardBody)`
   display: flex;
