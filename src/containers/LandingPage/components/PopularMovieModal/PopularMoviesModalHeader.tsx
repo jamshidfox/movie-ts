@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Button } from "reactstrap"
 import { X } from "react-feather"
-import { FaPlay } from "react-icons/fa"
 interface Props {
   toggle: any
   data: {
@@ -91,10 +90,7 @@ const PopularMoviesModalHeader: React.FC<Props> = ({ toggle, data }) => {
         <MovieControlsContainer>
           <h4>{data.title}</h4>
           <MovieControls>
-            <WatchButton>
-              <FaPlay color="black" />
-              Смотреть сейчас
-            </WatchButton>
+            <WatchButton>Смотреть сейчас</WatchButton>
           </MovieControls>
         </MovieControlsContainer>
       </MovieImageBox>
