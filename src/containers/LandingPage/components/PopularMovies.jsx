@@ -68,13 +68,7 @@ const RatingOfMovie = styled("div")`
   width: 40px;
   border-radius: 20px;
   font-size: 18px;
-  background-color: ${() => {
-    return `rgb(
-      ${Math.round(Math.random() * 255)},
-      ${Math.round(Math.random() * 255)},
-      ${Math.round(Math.random() * 255)}
-      )`
-  }}; /*Can be taken from theme */
+  background-color: #0d0c29;
   color: white; /* later will be come from theme */
 `
 
