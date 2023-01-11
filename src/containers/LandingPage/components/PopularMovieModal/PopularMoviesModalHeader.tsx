@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Button } from "reactstrap"
 
 import { X, Play, Bookmark, Share2, VolumeX } from "react-feather"
+import { useNavigate } from "react-router-dom"
 
 interface Props {
   toggle: any
@@ -98,6 +99,10 @@ const MuteOrVolumeButton = styled("a")`
 
 const PopularMoviesModalHeader: React.FC<Props> = ({ toggle, data }) => {
   const ImgUrl = ""
+  const navigate = useNavigate()
+  const handWatchClick = () => {
+    navigate("/searched_movie")
+  }
 
   //   console.log(typeof data)
   // console.log(data)
@@ -113,7 +118,7 @@ const PopularMoviesModalHeader: React.FC<Props> = ({ toggle, data }) => {
         <MovieControlsContainer>
           <h4>{data.title}</h4>
           <MovieControls>
-            <WatchButton>
+            <WatchButton onClick={handWatchClick}>
               <Play color="black" style={{ fill: "black" }} />
               Смотреть сейчас
             </WatchButton>
