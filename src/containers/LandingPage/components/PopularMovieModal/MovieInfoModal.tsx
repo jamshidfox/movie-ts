@@ -39,9 +39,7 @@ const MovieInfo = styled("div")`
   color: white;
 `
 const MovieInfoDescription = styled("div")``
-const MovieInfoText = styled("div")`
-  background-color: red;
-`
+const MovieInfoText = styled("div")``
 
 const Container = styled("div")``
 
