@@ -5,9 +5,13 @@ import { MoviePlayer } from "../../../components/VideoPlayer"
 const Container = styled.div``
 
 const SearchedResult: React.FC = () => {
+  const id = document.URL.split("?id=")[1]
+
   return (
     <Container>
-      <MoviePlayer url="https://voxe-cdn.s3.eu-north-1.amazonaws.com/cartoons/gorod-geroev-big-hero-6-2014-bdrip-720p-x264-rus-eng/master.m3u8" />
+      <MoviePlayer
+        url={`https://voxe-cdn.s3.eu-north-1.amazonaws.com/movies/${id}/master.m3u8`}
+      />
     </Container>
   )
 }
