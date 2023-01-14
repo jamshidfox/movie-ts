@@ -11,3 +11,4 @@ export const CREATE_GUEST_SESSION = `${API_URL}/3/authentication/guest_session/n
 /////////////////////////////////////////////////////////////////////////////////////////////////
 export const DOMAIN_URL2 = "https://jk-tv.netlify.app"
 export const POPULAR_MOVIES = `${DOMAIN_URL2}/popular_movies/get_all`
+export const ACTION_MOVIES = `${DOMAIN_URL2}/action_movies/get_all`
