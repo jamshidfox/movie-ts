@@ -10,6 +10,11 @@ const Container = styled.div`
   }
   overflow: hidden;
   align-items: center;
+  :hover {
+    .shit {
+      opacity: 1;
+    }
+  }
 `
 
 const Content = styled.div`
@@ -44,12 +49,13 @@ const WatchTrailerContainer = styled("div")`
 
 const PrevButton = styled.button`
   display: flex;
+  opacity: 0;
+  transition: all 0.3s linear;
   justify-content: center;
   align-items: center;
   position: absolute;
   width: 70px;
-  animation: btn 1s;
-  background-color: yellow;
+  background-color: #10272f;
   border-radius: 50%;
   left: 1.3rem;
   z-index: 99;
@@ -61,7 +67,7 @@ const NextButton = styled.button`
   align-items: center;
   position: absolute;
   right: 1.3rem;
-  background-color: yellow;
+  background-color: #10272f;
   border-radius: 50%;
   z-index: 99;
 `
@@ -69,10 +75,11 @@ const ContentWrapper = styled.div`
   display: flex;
   overflow: hidden;
   width: 100%;
+  padding-left: 10px;
   align-items: center;
   justify-content: flex-start;
   height: 350px;
-  border: 5px solid #ffffff;
+  border: 5px solid #10272f;
   scroll-behavior: smooth;
   border-radius: 10px;
 `
@@ -98,6 +105,7 @@ const Trailers: React.FC = () => {
   return (
     <Container>
       <PrevButton
+        className="shit"
         onClick={() => {
           sideScroll(contentWrapper.current, 50, 1000, -1000)
         }}
@@ -120,15 +128,6 @@ const Trailers: React.FC = () => {
       >
         <ChevronRight style={{ position: "relative", left: "2px" }} size={60} />
       </NextButton>
-
-      {/* <ReactHlsPlayer
-        playerRef={contentWrapper}
-        src={`https://voxe-cdn.s3.eu-north-1.amazonaws.com/trailers/billions-2016-official-trailer-paul-giamatti-damian-lewis-showtime-series/master.m3u8`}
-        autoPlay={false}
-        controls={true}
-        width="100%"
-        height="auto"
-      /> */}
     </Container>
   )
 }

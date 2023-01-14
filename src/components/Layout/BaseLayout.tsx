@@ -7,6 +7,7 @@ import styled from "styled-components"
 const Container = styled(`div`)`
   color: black;
   width: 100%;
+  background-color: #10272f;
   margin: 0;
 `
 const HeaderSection = styled("div")`

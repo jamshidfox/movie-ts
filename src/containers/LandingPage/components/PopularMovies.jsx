@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react"
 import styled from "styled-components"
-import { Card, CardBody, CardImg, CardText } from "reactstrap"
+import { Card, CardBody, CardImg, CardText, Placeholder } from "reactstrap"
 import MovieInfoModal from "./PopularMovieModal/MovieInfoModal"
 
 const Container = styled("div")`

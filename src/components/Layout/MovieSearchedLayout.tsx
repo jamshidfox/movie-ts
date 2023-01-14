@@ -1,5 +1,4 @@
 import React from "react"
-import { MoviePlayer } from "../VideoPlayer"
 import styled from "styled-components"
 import { getCookie } from "../../utils/cookie"
 import ConfirmWithGuestSession from "./ConfirmGuestSession"
@@ -22,11 +21,7 @@ const BaseLayout: React.FC<Props> = ({ children }) => {
     )
   }
 
-  return (
-    <Container>
-      <MoviePlayer url="https://voxe-cdn.s3.eu-north-1.amazonaws.com/cartoons/gorod-geroev-big-hero-6-2014-bdrip-720p-x264-rus-eng/master.m3u8" />
-    </Container>
-  )
+  return <Container>{children}</Container>
 }
 
 export default BaseLayout

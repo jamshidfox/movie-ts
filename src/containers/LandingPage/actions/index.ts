@@ -32,3 +32,16 @@ export const getGenres = (id: any, data: any) => {
     })
   }
 }
+export const getActions = (id: any, data: any) => {
+  return (dispatch: any, getState: any) => {
+    const payload = axios({ dispatch, getState })
+      .get(sprintf(API.ACTION_MOVIES, id), data)
+      .then(getPayloadFromSuccess)
+      .catch(getPayloadFromError)
+
+    return dispatch({
+      payload,
+      type: actionTypes.ACTIONS,
+    })
+  }
+}
