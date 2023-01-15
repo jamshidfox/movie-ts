@@ -76,11 +76,9 @@ const PopularMovies = ({ data }) => {
   const [modal, setModal] = useState(false)
   const [movieInfo, setMovieInfo] = useState(0)
   const toggle = () => setModal(!modal)
-  // const navigate = useNavigate()
   const handleMovieClick = (movie) => {
     setMovieInfo(movie)
     setModal(true)
-    // navigate(`${ROUTES.SEARCHED_MOVIE}?id=${movie.id}`)
   }
   return (
     <Container>
