@@ -7,9 +7,13 @@ interface Props {
   toggle: any
   modal: boolean
   data: {
-    title: string
+    Id: string
     backdropPath: string
+    movieId: string | null | number
     overview: string
+    releaseDate: string
+    title: string
+    voteAverage: number
   }
 }
 const PopularMoviesModal = styled(Modal)`

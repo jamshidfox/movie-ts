@@ -8,8 +8,13 @@ import { useNavigate } from "react-router-dom"
 interface Props {
   toggle: any
   data: {
-    title: string
+    Id: string
     backdropPath: string
+    movieId: string | null | number
+    overview: string
+    releaseDate: string
+    title: string
+    voteAverage: number
   }
 }
 
@@ -98,9 +103,10 @@ const MuteOrVolumeButton = styled("a")`
 `
 
 const ModalHeader: React.FC<Props> = ({ toggle, data }) => {
+  console.log(data)
   const navigate = useNavigate()
-  const handWatchClick = () => {
-    navigate("/searched_movie")
+  const handleMovieClick = (id: string | null | number) => {
+    navigate(`/searched_movie?id=${id}`)
   }
   return (
     <Container>
@@ -114,7 +120,7 @@ const ModalHeader: React.FC<Props> = ({ toggle, data }) => {
         <MovieControlsContainer>
           <h4>{data.title}</h4>
           <MovieControls>
-            <WatchButton onClick={handWatchClick}>
+            <WatchButton onClick={() => handleMovieClick(data.movieId)}>
               <Play color="black" style={{ fill: "black" }} />
               Смотреть сейчас
             </WatchButton>
