@@ -33,7 +33,7 @@ const Content = styled.div`
   background-position: center;
   flex-shrink: 0;
   margin: 0;
-  margin: 1.5rem 0.4rem 1.5rem 0rem;
+  margin: 1.5rem 0.6rem 1.5rem 0rem;
   border-radius: 20px;
   transition: 0.3s ease-in-out;
   background-color: black;
@@ -46,7 +46,7 @@ const WatchTrailerContainer = styled("div")<prop>`
   background-image: url(${(p: prop) => p.backImg});
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  width: 95%;
+  width: 100%;
   height: 100%;
   border-radius: 20px;
   display: flex;
@@ -56,14 +56,14 @@ const WatchTrailerContainer = styled("div")<prop>`
 
 const PrevButton = styled.button`
   display: flex;
+  position: absolute;
+  left: 1.3rem;
   opacity: 0;
   transition: all 0.3s linear;
   justify-content: center;
   align-items: center;
-  position: absolute;
   width: 70px;
   border-radius: 50%;
-  left: 1.3rem;
   border: none;
   color: white;
   background-color: #10272f;
@@ -71,13 +71,13 @@ const PrevButton = styled.button`
 `
 const NextButton = styled.button`
   opacity: 0;
+  position: absolute;
+  right: 1.3rem;
   width: 70px;
-  display: flex;
+  /* display: flex; */
   transition: all 0.3s linear;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  right: 1.3rem;
   transition: all 0.3s linear;
   background-color: #10272f;
   border: none;
@@ -126,15 +126,18 @@ const HorizontalSection: React.FC<Props> = ({ data }) => {
 
   return (
     <Container>
-      <PrevButton
-        className="buttons"
-        onClick={() => {
-          sideScroll(contentWrapper.current, 50, 1000, -1000)
-        }}
-      >
-        <ChevronLeft style={{ position: "relative", left: "-2px" }} size={60} />
-      </PrevButton>
       <ContentWrapper ref={contentWrapper}>
+        <PrevButton
+          className="buttons"
+          onClick={() => {
+            sideScroll(contentWrapper.current, 50, 1000, -1000)
+          }}
+        >
+          <ChevronLeft
+            style={{ position: "relative", left: "-2px" }}
+            size={60}
+          />
+        </PrevButton>
         {data.map((movie: any, index: any) => {
           return (
             <Content key={index} onClick={() => handleMovieClick(movie)}>
@@ -144,15 +147,19 @@ const HorizontalSection: React.FC<Props> = ({ data }) => {
             </Content>
           )
         })}
+        <NextButton
+          className="buttons"
+          onClick={() => {
+            sideScroll(contentWrapper.current, 50, 1000, 1000)
+          }}
+        >
+          <ChevronRight
+            style={{ position: "relative", left: "2px" }}
+            size={60}
+          />
+        </NextButton>
       </ContentWrapper>
-      <NextButton
-        className="buttons"
-        onClick={() => {
-          sideScroll(contentWrapper.current, 50, 1000, 1000)
-        }}
-      >
-        <ChevronRight style={{ position: "relative", left: "2px" }} size={60} />
-      </NextButton>
+
       <ModalForm toggle={toggle} modal={modal} data={movieInfo} />
     </Container>
   )
