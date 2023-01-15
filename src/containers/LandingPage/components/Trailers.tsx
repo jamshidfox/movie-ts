@@ -11,7 +11,7 @@ const Container = styled.div`
   overflow: hidden;
   align-items: center;
   :hover {
-    .shit {
+    .buttons {
       opacity: 1;
     }
   }
@@ -55,19 +55,25 @@ const PrevButton = styled.button`
   align-items: center;
   position: absolute;
   width: 70px;
-  background-color: #10272f;
   border-radius: 50%;
   left: 1.3rem;
+  border: none;
+  color: white;
+  background-color: #10272f;
   z-index: 99;
 `
 const NextButton = styled.button`
+  opacity: 0;
   width: 70px;
+  transition: all 0.3s linear;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   right: 1.3rem;
   background-color: #10272f;
+  border: none;
+  color: white;
   border-radius: 50%;
   z-index: 99;
 `
@@ -105,7 +111,7 @@ const Trailers: React.FC = () => {
   return (
     <Container>
       <PrevButton
-        className="shit"
+        className="buttons"
         onClick={() => {
           sideScroll(contentWrapper.current, 50, 1000, -1000)
         }}
@@ -122,6 +128,7 @@ const Trailers: React.FC = () => {
         })}
       </ContentWrapper>
       <NextButton
+        className="buttons"
         onClick={() => {
           sideScroll(contentWrapper.current, 50, 1000, 1000)
         }}
