@@ -27,16 +27,15 @@ const Container = styled("div")`
 const Content = styled.div`
   display: flex;
   justify-content: center;
-  width: 430px;
-  height: 240px;
+  width: 370px;
+  height: 220px;
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
   margin: 0;
-  margin: 1.5rem 0.4rem 1.5rem 0rem;
-  border-radius: 20px;
+  margin: 1.5rem 0.6rem 1.5rem 0rem;
+  border-radius: 10px;
   transition: 0.3s ease-in-out;
-  background-color: black;
   z-index: 1;
   :hover {
     transform: scale(102%, 103%);
@@ -46,7 +45,7 @@ const WatchTrailerContainer = styled("div")<prop>`
   background-image: url(${(p: prop) => p.backImg});
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  width: 95%;
+  width: 100%;
   height: 100%;
   border-radius: 20px;
   display: flex;
@@ -56,33 +55,34 @@ const WatchTrailerContainer = styled("div")<prop>`
 
 const PrevButton = styled.button`
   display: flex;
+  position: absolute;
+  left: 1.3rem;
   opacity: 0;
   transition: all 0.3s linear;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  width: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  left: 1.3rem;
   border: none;
   color: white;
   background-color: #10272f;
   z-index: 99;
 `
 const NextButton = styled.button`
-  opacity: 0;
-  width: 70px;
   display: flex;
+  position: absolute;
+  right: 1.3rem;
+  opacity: 0;
   transition: all 0.3s linear;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  right: 1.3rem;
-  transition: all 0.3s linear;
-  background-color: #10272f;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   border: none;
   color: white;
-  border-radius: 50%;
+  background-color: #10272f;
   z-index: 99;
 `
 const ContentWrapper = styled.div`
@@ -126,15 +126,18 @@ const HorizontalSection: React.FC<Props> = ({ data }) => {
 
   return (
     <Container>
-      <PrevButton
-        className="buttons"
-        onClick={() => {
-          sideScroll(contentWrapper.current, 50, 1000, -1000)
-        }}
-      >
-        <ChevronLeft style={{ position: "relative", left: "-2px" }} size={60} />
-      </PrevButton>
       <ContentWrapper ref={contentWrapper}>
+        <PrevButton
+          className="buttons"
+          onClick={() => {
+            sideScroll(contentWrapper.current, 50, 1000, -1000)
+          }}
+        >
+          <ChevronLeft
+            style={{ position: "relative", left: "-2px" }}
+            size={40}
+          />
+        </PrevButton>
         {data.map((movie: any, index: any) => {
           return (
             <Content key={index} onClick={() => handleMovieClick(movie)}>
@@ -144,15 +147,19 @@ const HorizontalSection: React.FC<Props> = ({ data }) => {
             </Content>
           )
         })}
+        <NextButton
+          className="buttons"
+          onClick={() => {
+            sideScroll(contentWrapper.current, 50, 1000, 1000)
+          }}
+        >
+          <ChevronRight
+            style={{ position: "relative", left: "2px" }}
+            size={60}
+          />
+        </NextButton>
       </ContentWrapper>
-      <NextButton
-        className="buttons"
-        onClick={() => {
-          sideScroll(contentWrapper.current, 50, 1000, 1000)
-        }}
-      >
-        <ChevronRight style={{ position: "relative", left: "2px" }} size={60} />
-      </NextButton>
+
       <ModalForm toggle={toggle} modal={modal} data={movieInfo} />
     </Container>
   )
