@@ -27,16 +27,15 @@ const Container = styled("div")`
 const Content = styled.div`
   display: flex;
   justify-content: center;
-  width: 430px;
-  height: 240px;
+  width: 370px;
+  height: 220px;
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
   margin: 0;
   margin: 1.5rem 0.6rem 1.5rem 0rem;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: 0.3s ease-in-out;
-  background-color: black;
   z-index: 1;
   :hover {
     transform: scale(102%, 103%);
@@ -62,7 +61,8 @@ const PrevButton = styled.button`
   transition: all 0.3s linear;
   justify-content: center;
   align-items: center;
-  width: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: none;
   color: white;
@@ -70,19 +70,19 @@ const PrevButton = styled.button`
   z-index: 99;
 `
 const NextButton = styled.button`
-  opacity: 0;
+  display: flex;
   position: absolute;
   right: 1.3rem;
-  width: 70px;
-  /* display: flex; */
+  opacity: 0;
   transition: all 0.3s linear;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s linear;
-  background-color: #10272f;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   border: none;
   color: white;
-  border-radius: 50%;
+  background-color: #10272f;
   z-index: 99;
 `
 const ContentWrapper = styled.div`
@@ -135,7 +135,7 @@ const HorizontalSection: React.FC<Props> = ({ data }) => {
         >
           <ChevronLeft
             style={{ position: "relative", left: "-2px" }}
-            size={60}
+            size={40}
           />
         </PrevButton>
         {data.map((movie: any, index: any) => {
