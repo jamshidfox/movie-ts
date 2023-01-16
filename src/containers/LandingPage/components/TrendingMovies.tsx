@@ -9,18 +9,19 @@ interface Props {
     index: number
   ]
   title: string
+
 }
 const Container = styled("div")``
 const HeadLine = styled("h3")`
   color: white;
 `
-const PopularMovies: React.FC<Props> = ({ data, title }) => {
+const TrendingMovies: React.FC<Props> = ({ data ,title}) => {
   return (
     <Container>
-      <HeadLine>{title}</HeadLine>
+        <HeadLine>{title}</HeadLine>
       <MovieContainer data={data} />
     </Container>
   )
 }
 
-export default PopularMovies
+export default TrendingMovies

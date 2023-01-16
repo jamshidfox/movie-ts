@@ -10,6 +10,12 @@ export const makeRootReducer = (asyncReducers) => {
     confirmDialog: confirmDialogReducer,
     [STATE.TRENDING_MOVIES]: createThunkReducer(actionTypes.TRENDING_MOVIES),
     [STATE.POPULAR_MOVIES]: createThunkReducer(actionTypes.POPULAR_MOVIES),
+    [STATE.WAR_MOVIES]: createThunkReducer(actionTypes.WAR_MOVIES),
+    [STATE.ACTION_MOVIES]: createThunkReducer(actionTypes.ACTION_MOVIES),
+    [STATE.FANTASY_MOVIES]: createThunkReducer(actionTypes.FANTASY_MOVIES),
+    [STATE.SCIENCE_FICTION_MOVIES]: createThunkReducer(
+      actionTypes.SCIENCE_FICTION
+    ),
     [STATE.GENRES]: createThunkReducer(actionTypes.GENRES),
     ...asyncReducers,
   })

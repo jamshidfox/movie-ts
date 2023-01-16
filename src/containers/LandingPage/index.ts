@@ -1,5 +1,5 @@
 import * as ROUTES from "../../constants/routes"
-import Layouts from "../../components/Layout/BaseLayout"
+import Layouts from "../../components/Layout/MovieBaseLayout"
 import LandingPageContainer from "./containers/LandingContainer"
 export default () => [
   {
