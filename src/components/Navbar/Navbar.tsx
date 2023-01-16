@@ -5,6 +5,7 @@ import { AlignJustify } from "react-feather"
 import { getCookie } from "../../utils/cookie"
 import { Search } from "react-feather"
 import { useNavigate } from "react-router-dom"
+import * as ROUTES from "../../constants/routes"
 
 const Container = styled(Row)`
   align-items: center;
@@ -37,6 +38,10 @@ const Genres = styled.div`
   padding: 0.5rem;
   margin: 0rem 0.5rem;
   color: white;
+  &:hover {
+    cursor: pointer;
+    color: red;
+  }
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     font-family: BenchNine, sans-serif;
     margin: 0;
@@ -67,6 +72,9 @@ const Logo = styled.div`
   font-size: 2.5rem;
   margin: 0rem 1rem;
   color: red;
+  &:hover {
+    cursor: pointer;
+  }
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: none;
   }
@@ -83,8 +91,8 @@ const MenuIcon = styled(Col)`
 const DesktopNavbar: React.FC = () => {
   const navigate = useNavigate()
   const token = getCookie("token")
-  const handleLogoClick = () => {
-    navigate("/")
+  const handleLogoClick = (category: string) => {
+    navigate(category)
   }
   return (
     <Container>
@@ -94,9 +102,11 @@ const DesktopNavbar: React.FC = () => {
       <GenresContainer sm="4">
         <Genres>About</Genres>
         <Genres>Movies</Genres>
-        <Logo onClick={handleLogoClick}>M</Logo>
+        <Logo onClick={() => handleLogoClick("/")}>M</Logo>
         <Genres>Series</Genres>
-        <Genres>Upcoming</Genres>
+        <Genres onClick={() => handleLogoClick(ROUTES.CARTOONS)}>
+          Cartoons
+        </Genres>
       </GenresContainer>
       {!token && (
         <SignContainer sm="4">
