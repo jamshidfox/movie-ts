@@ -14,7 +14,7 @@ const Container = styled("div")``
 const HeadLine = styled("h3")`
   color: white;
 `
-const PopularMovies: React.FC<Props> = ({ data, title }) => {
+const ActionMovies: React.FC<Props> = ({ data, title }) => {
   return (
     <Container>
       <HeadLine>{title}</HeadLine>
@@ -23,4 +23,4 @@ const PopularMovies: React.FC<Props> = ({ data, title }) => {
   )
 }
 
-export default PopularMovies
+export default ActionMovies
