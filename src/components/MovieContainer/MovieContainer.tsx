@@ -83,6 +83,7 @@ const ButtonContainer = styled("div")<BtnProps>`
   justify-content: center;
   align-items: center;
   height: 250px;
+  visibility: ${(p: BtnProps) => (p.isActive ? "visible" : "hidden")};
   left: ${(p: BtnProps) => (p.isLeft ? "0rem" : "auto")};
   right: ${(p: BtnProps) => (!p.isLeft ? "0rem" : "auto")};
   position: absolute;
@@ -91,7 +92,7 @@ const ButtonContainer = styled("div")<BtnProps>`
   background: ${(p: BtnProps) => {
     return `linear-gradient(${
       p.isLeft ? "-" : ""
-    }90deg,rgba(16, 39, 47, 0.05),rgba(16, 39, 47, 0.9))`
+    }90deg,rgba(16, 39, 47, 0),rgba(16, 39, 47, 0.9))`
   }};
   opacity: 0;
   z-index: 1;
@@ -168,7 +169,6 @@ const HorizontalSection: React.FC<Props> = ({ data }) => {
           </Button>
         </ButtonContainer>
       </ContentWrapper>
-
       <ModalForm toggle={toggle} modal={modal} data={movieInfo} />
     </Container>
   )
