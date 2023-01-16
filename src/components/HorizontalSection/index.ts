@@ -1,1 +1,0 @@
-export { HorizontalSection } from "./HorizontalSection"

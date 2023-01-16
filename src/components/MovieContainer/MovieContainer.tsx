@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import styled from "styled-components"
 import { ChevronRight, ChevronLeft } from "react-feather"
-import { ModalForm } from "../ModalForm"
+import { ModalForm } from "../MovieModal"
 interface prop {
   backImg: string
 }
