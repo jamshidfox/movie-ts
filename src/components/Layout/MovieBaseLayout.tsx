@@ -1,5 +1,6 @@
 import React from "react"
 import { DesktopNavbar } from "../Navbar"
+import { MovieInfo } from "../MovieHeadlineInfo"
 import { Footer } from "../Footer"
 import styled from "styled-components"
 
@@ -9,7 +10,11 @@ const Container = styled(`div`)`
   background-color: #10272f;
   margin: 0;
 `
-
+const HeaderSection = styled("div")`
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    display: flex;
+  }
+`
 interface Props {
   children: JSX.Element | JSX.Element[]
 }
@@ -17,7 +22,10 @@ interface Props {
 const BaseLayout: React.FC<Props> = ({ children }) => {
   return (
     <Container>
-      <DesktopNavbar />
+      <HeaderSection>
+        <DesktopNavbar />
+        <MovieInfo />
+      </HeaderSection>
       {children}
       <Footer />
     </Container>

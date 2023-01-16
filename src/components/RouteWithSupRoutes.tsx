@@ -1,6 +1,10 @@
 import { Routes, Route } from "react-router-dom"
 import React from "react"
 import styled from "styled-components"
+import EmptyQuery from "./EmptyQuery"
+import { DesktopNavbar } from "./Navbar"
+import { Footer } from "./Footer"
+import BaseLayout from "./Layout/BaseLayout"
 
 const Container = styled("div")`
   display: flex;
@@ -8,9 +12,9 @@ const Container = styled("div")`
   width: 100%;
 `
 
-// const NotFoundContainer = styled(HomeLayout)`
-//   min-height: 90vh;
-// `
+const NotFoundContainer = styled(BaseLayout)`
+  min-height: 90vh;
+`
 interface Props {
   routes: []
 }
@@ -34,7 +38,14 @@ const RouteWithSupRoutes: React.FC<Props> = ({ routes }) => {
             />
           )
         )}
-        <Route path="*" element={<h1>Not Found</h1>} />
+        <Route
+          path="*"
+          element={
+            <NotFoundContainer>
+              <EmptyQuery />
+            </NotFoundContainer>
+          }
+        />
       </Routes>
     </Container>
   )
