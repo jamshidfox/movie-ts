@@ -91,7 +91,7 @@ const MenuIcon = styled(Col)`
 const DesktopNavbar: React.FC = () => {
   const navigate = useNavigate()
   const token = getCookie("token")
-  const handleLogoClick = (category: string) => {
+  const handleNavigateClick = (category: string) => {
     navigate(category)
   }
   return (
@@ -102,9 +102,9 @@ const DesktopNavbar: React.FC = () => {
       <GenresContainer sm="4">
         <Genres>About</Genres>
         <Genres>Movies</Genres>
-        <Logo onClick={() => handleLogoClick("/")}>M</Logo>
+        <Logo onClick={() => handleNavigateClick("/")}>M</Logo>
         <Genres>Series</Genres>
-        <Genres onClick={() => handleLogoClick(ROUTES.CARTOONS)}>
+        <Genres onClick={() => handleNavigateClick(ROUTES.CARTOONS)}>
           Cartoons
         </Genres>
       </GenresContainer>
@@ -116,7 +116,7 @@ const DesktopNavbar: React.FC = () => {
       )}
       {token && (
         <SignContainer sm="4">
-          <Search />
+          <Search onClick={() => handleNavigateClick(ROUTES.SEARCH)} />
         </SignContainer>
       )}
     </Container>
