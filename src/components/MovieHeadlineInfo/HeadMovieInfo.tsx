@@ -3,6 +3,9 @@ import styled from "styled-components"
 import { Row, Col } from "reactstrap"
 
 const Container = styled(Row)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 40rem;
   background-size: 100% 100%;
   background-image: url("https://s3-alpha-sig.figma.com/img/6115/1284/ab8e0632bc53aad0618e87caa55f64f8?Expires=1673827200&Signature=KcHt4p--11GMpcFvTJTOc-CTMr~FwmYjetSlVxh0KXfjVXXg46CaYHkkdhKAuSClhDMRXchN80KU1O9mauQt80mmLY8kdF2QKUNI9CDkNRlnOZz0TM5aZUtNGvG8ZGzLN4lPjwr1gUruqddWkU-96rbNOpwxaXIk4SEu5l8S7MRa2YKASJutpnPqfUOojGWWeg~dhFGMcwcwhe86KOvRv6nVj~Z0XKSRDnbVcrz0Z1GiG5L6qk~TtdsLciIvFgwTIlZRea41VotT6ryS~JkxYB0kzlA~ilYNUgf-VkmUKg3oIzMf-45U1i6PWxJc~VXTVFXmM9gB8FXmYrPz0i~LuQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
@@ -136,6 +139,17 @@ const WatchContainerImage = styled("img")`
   margin-right: 10px;
 `
 
+const ShadowElement = styled("div")`
+  height: 50px;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#10272f),
+    color-stop(100%, transparent)
+  );
+`
+
 const HeadMovieInfo: React.FC = () => {
   return (
     <Container>
@@ -168,6 +182,7 @@ const HeadMovieInfo: React.FC = () => {
           relationships left in her wake long before she became an Avenger.
         </Paragraph>
       </InfoContainer>
+      <ShadowElement></ShadowElement>
     </Container>
   )
 }

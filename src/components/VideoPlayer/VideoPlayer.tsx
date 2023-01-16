@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const Player: any = styled(ReactHlsPlayer)`
   width: 100vw;
-  height: max-content;
+  height: 100vh;
   border: none;
   outline: 0;
 `

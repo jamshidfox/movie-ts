@@ -9,6 +9,9 @@ const Container = styled(`div`)`
   width: 100%;
   background-color: #10272f;
   margin: 0;
+  & > :nth-child(2) {
+    padding: 0;
+  }
 `
 const HeaderSection = styled("div")`
   background-color: red;
