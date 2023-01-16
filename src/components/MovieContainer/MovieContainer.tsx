@@ -13,6 +13,10 @@ interface Props {
     index: number
   ]
 }
+interface BtnProps {
+  isLeft: boolean
+  isActive: boolean
+}
 const Container = styled("div")`
   display: flex;
   flex-direction: column;
@@ -36,7 +40,6 @@ const Content = styled.div`
   margin: 1.5rem 0.6rem 1.5rem 0rem;
   border-radius: 10px;
   transition: 0.3s ease-in-out;
-  z-index: 1;
   :hover {
     transform: scale(102%, 103%);
   }
@@ -53,12 +56,8 @@ const WatchTrailerContainer = styled("div")<prop>`
   align-items: center;
 `
 
-const PrevButton = styled.button`
+const Button = styled.button`
   display: flex;
-  position: absolute;
-  left: 1.3rem;
-  opacity: 0;
-  transition: all 0.3s linear;
   justify-content: center;
   align-items: center;
   width: 50px;
@@ -67,23 +66,6 @@ const PrevButton = styled.button`
   border: none;
   color: white;
   background-color: #10272f;
-  z-index: 99;
-`
-const NextButton = styled.button`
-  display: flex;
-  position: absolute;
-  right: 1.3rem;
-  opacity: 0;
-  transition: all 0.3s linear;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  color: white;
-  background-color: #10272f;
-  z-index: 99;
 `
 const ContentWrapper = styled.div`
   display: flex;
@@ -96,6 +78,26 @@ const ContentWrapper = styled.div`
   scroll-behavior: smooth;
   border-radius: 10px;
 `
+const ButtonContainer = styled("div")<BtnProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  visibility: ${(p: BtnProps) => (p.isActive ? "visible" : "hidden")};
+  left: ${(p: BtnProps) => (p.isLeft ? "0rem" : "auto")};
+  right: ${(p: BtnProps) => (!p.isLeft ? "0rem" : "auto")};
+  position: absolute;
+  transition: all 0.3s linear;
+  width: 96px;
+  background: ${(p: BtnProps) => {
+    return `linear-gradient(${
+      p.isLeft ? "-" : ""
+    }90deg,rgba(16, 39, 47, 0),rgba(16, 39, 47, 0.9))`
+  }};
+  opacity: 0;
+  z-index: 1;
+`
+
 const HorizontalSection: React.FC<Props> = ({ data }) => {
   const sideScroll = (
     element: HTMLDivElement,
@@ -115,6 +117,7 @@ const HorizontalSection: React.FC<Props> = ({ data }) => {
   const contentWrapper: any = useRef(null)
 
   const [modal, setModal] = useState(false)
+  const [leftActive, setleftActive] = useState(false)
   let [movieInfo, setMovieInfo]: [any, any] = useState(0)
   const toggle = () => setModal(!modal)
   // const navigate = useNavigate()
@@ -127,17 +130,22 @@ const HorizontalSection: React.FC<Props> = ({ data }) => {
   return (
     <Container>
       <ContentWrapper ref={contentWrapper}>
-        <PrevButton
+        <ButtonContainer
           className="buttons"
-          onClick={() => {
-            sideScroll(contentWrapper.current, 50, 1000, -1000)
-          }}
+          isLeft={true}
+          isActive={leftActive}
         >
-          <ChevronLeft
-            style={{ position: "relative", left: "-2px" }}
-            size={40}
-          />
-        </PrevButton>
+          <Button
+            onClick={() => {
+              sideScroll(contentWrapper.current, 50, 1000, -1000)
+            }}
+          >
+            <ChevronLeft
+              style={{ position: "relative", left: "-2px" }}
+              size={40}
+            />
+          </Button>
+        </ButtonContainer>
         {data.map((movie: any, index: any) => {
           return (
             <Content key={index} onClick={() => handleMovieClick(movie)}>
@@ -147,19 +155,20 @@ const HorizontalSection: React.FC<Props> = ({ data }) => {
             </Content>
           )
         })}
-        <NextButton
-          className="buttons"
-          onClick={() => {
-            sideScroll(contentWrapper.current, 50, 1000, 1000)
-          }}
-        >
-          <ChevronRight
-            style={{ position: "relative", left: "2px" }}
-            size={60}
-          />
-        </NextButton>
+        <ButtonContainer className="buttons" isLeft={false} isActive={true}>
+          <Button
+            onClick={() => {
+              sideScroll(contentWrapper.current, 50, 1000, 1000)
+              setleftActive(true)
+            }}
+          >
+            <ChevronRight
+              style={{ position: "relative", left: "2px" }}
+              size={60}
+            />
+          </Button>
+        </ButtonContainer>
       </ContentWrapper>
-
       <ModalForm toggle={toggle} modal={modal} data={movieInfo} />
     </Container>
   )

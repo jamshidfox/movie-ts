@@ -3,6 +3,9 @@ import styled from "styled-components"
 import { Row, Col } from "reactstrap"
 
 const Container = styled(Row)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 40rem;
   background-size: 100% 100%;
   background-image: url("https://cdn.vox-cdn.com/thumbor/CAUv8Mbou_rQE5hhkmsK_veYAbU=/0x0:1920x1080/1200x800/filters:focal(516x102:822x408)/cdn.vox-cdn.com/uploads/chorus_image/image/58289837/black_widow.0.jpg");
@@ -136,6 +139,17 @@ const WatchContainerImage = styled("img")`
   margin-right: 10px;
 `
 
+const ShadowElement = styled("div")`
+  height: 50px;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#10272f),
+    color-stop(100%, transparent)
+  );
+`
+
 const HeadMovieInfo: React.FC = () => {
   return (
     <Container>
@@ -168,6 +182,7 @@ const HeadMovieInfo: React.FC = () => {
           relationships left in her wake long before she became an Avenger.
         </Paragraph>
       </InfoContainer>
+      <ShadowElement></ShadowElement>
     </Container>
   )
 }
