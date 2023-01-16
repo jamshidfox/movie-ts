@@ -1,6 +1,6 @@
 import React from "react"
 import { DesktopNavbar } from "../Navbar"
-import { MovieInfo } from "../MovieInfo"
+import { MovieInfo } from "../MovieHeadlineInfo"
 import { Footer } from "../Footer"
 import styled from "styled-components"
 

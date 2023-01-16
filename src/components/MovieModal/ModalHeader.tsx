@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Button } from "reactstrap"
-
 import { X, Play, Bookmark, Share2, VolumeX } from "react-feather"
 import { useNavigate } from "react-router-dom"
 

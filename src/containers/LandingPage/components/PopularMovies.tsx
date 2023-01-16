@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { HorizontalSection } from "../../../components/HorizontalSection"
+import { MovieContainer } from "../../../components/MovieContainer"
 interface Props {
   data: [
     movie: {
@@ -13,7 +13,7 @@ const Container = styled("div")``
 const PopularMoviesUpdated: React.FC<Props> = ({ data }) => {
   return (
     <Container>
-      <HorizontalSection data={data} />
+      <MovieContainer data={data} />
     </Container>
   )
 }
