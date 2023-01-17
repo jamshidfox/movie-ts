@@ -6,16 +6,16 @@ import axios, {
   getPayloadFromSuccess,
 } from "../../../utils/axios"
 
-export const getPopularMovies = (id: any, data: any) => {
+export const getCartoons = (id: any, data: any) => {
   return (dispatch: any, getState: any) => {
     const payload = axios({ dispatch, getState })
-      .get(sprintf(API.POPULAR_MOVIES, id), data)
+      .get(sprintf(API.CARTOONS, id), data)
       .then(getPayloadFromSuccess)
       .catch(getPayloadFromError)
 
     return dispatch({
       payload,
-      type: actionTypes.POPULAR_MOVIES,
+      type: actionTypes.CARTOONS,
     })
   }
 }

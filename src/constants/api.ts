@@ -16,3 +16,4 @@ export const WAR_MOVIES = `${DOMAIN_URL2}/war_movies/get_all`
 export const ACTION_MOVIES = `${DOMAIN_URL2}/action_movies/get_all`
 export const FANTASY_MOVIES = `${DOMAIN_URL2}/fantasy_movies/get_all`
 export const SCIENCE_FICTION_MOVIES = `${DOMAIN_URL2}/science_fiction_movies/get_all`
+export const CARTOONS = `${DOMAIN_URL2}/cartoons/get_all`

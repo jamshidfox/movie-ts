@@ -13,6 +13,7 @@ export const makeRootReducer = (asyncReducers) => {
     [STATE.WAR_MOVIES]: createThunkReducer(actionTypes.WAR_MOVIES),
     [STATE.ACTION_MOVIES]: createThunkReducer(actionTypes.ACTION_MOVIES),
     [STATE.FANTASY_MOVIES]: createThunkReducer(actionTypes.FANTASY_MOVIES),
+    [STATE.CARTOONS]: createThunkReducer(actionTypes.CARTOONS),
     [STATE.SCIENCE_FICTION_MOVIES]: createThunkReducer(
       actionTypes.SCIENCE_FICTION
     ),
