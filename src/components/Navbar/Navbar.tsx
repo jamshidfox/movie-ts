@@ -6,7 +6,6 @@ import { getCookie } from "../../utils/cookie"
 import { Search } from "react-feather"
 import { useNavigate } from "react-router-dom"
 import * as ROUTES from "../../constants/routes"
-
 const Container = styled(Row)`
   align-items: center;
   padding: 0rem 1rem;
@@ -94,6 +93,7 @@ const DesktopNavbar: React.FC = () => {
   const handleNavigateClick = (category: string) => {
     navigate(category)
   }
+
   return (
     <Container>
       <MenuIcon sm="4">
