@@ -11,6 +11,10 @@ const Container = styled(`div`)`
   margin: 0;
 `
 const HeaderSection = styled("div")`
+  background-image: url("https://cdn.vox-cdn.com/thumbor/CAUv8Mbou_rQE5hhkmsK_veYAbU=/0x0:1920x1080/1200x800/filters:focal(516x102:822x408)/cdn.vox-cdn.com/uploads/chorus_image/image/58289837/black_widow.0.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  object-fit: contain;
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: flex;
   }

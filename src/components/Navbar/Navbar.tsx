@@ -10,8 +10,9 @@ const Container = styled(Row)`
   align-items: center;
   padding: 0rem 1rem;
   margin: 0;
+
   color: ${({ theme }) => theme.color.lightColor};
-  background-color: ${({ theme }) => theme.background.theme};
+  background-color: transparent;
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     width: 15%;
     display: flex;

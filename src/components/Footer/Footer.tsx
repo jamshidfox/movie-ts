@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Container = styled("div")`
   height: 100px;
-  background-color: #1f0301; /* later from theme */
+  background-color: ${({ theme }) => theme.background.footer};
   display: flex;
   flex-direction: column;
   align-items: center;
