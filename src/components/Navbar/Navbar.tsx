@@ -12,7 +12,7 @@ const Container = styled(Row)`
   margin: 0;
 
   color: ${({ theme }) => theme.color.lightColor};
-  background-color: transparent;
+  background: linear-gradient(180deg, #10272f, rgba(26, 26, 28, 0.3));
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     width: 15%;
     display: flex;
