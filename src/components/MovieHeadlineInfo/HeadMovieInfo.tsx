@@ -8,7 +8,6 @@ const Container = styled(Row)`
   justify-content: space-between;
   min-height: 40rem;
   background-size: 100% 100%;
-  background-image: url("https://cdn.vox-cdn.com/thumbor/CAUv8Mbou_rQE5hhkmsK_veYAbU=/0x0:1920x1080/1200x800/filters:focal(516x102:822x408)/cdn.vox-cdn.com/uploads/chorus_image/image/58289837/black_widow.0.jpg");
   margin: 0;
   background-size: cover;
   color: pink;
@@ -154,10 +153,6 @@ const HeadMovieInfo: React.FC = () => {
   return (
     <Container>
       <InfoContainer sm="5">
-        <TitleImageBox>
-          <TitleImageSub src="https://s3-alpha-sig.figma.com/img/15f3/76c3/d66107a59010b631999b057f0a39f3fb?Expires=1673827200&Signature=CceazhlVH2~cuu~4~hPF5qivqiXwB4fh14RXZTJNHvMmRA5mCwOhJLLM1J18wfdF7xacslB8aOJMFpCI5bsEL8CqQ4Rn18PNKGgkqS1p31t6xjIiWjXUdtaHKH6ue6bAfnM3BNvZD5vVIoqj7UWdZiCqExpgAMBppJKYtuM1tG8oS0DbOKPQWuFDPoaTV8kXZx1fpRdKC6tKKnWUP96kGGfigJQdhhZJWPQnuRmaLBNhPdxZqxMEXYvHAK8KOgogj5Jwkrn4iGN~p5Ngj2an-Vi9y~yZbYcsm9WZpCUNRJcKgxVoaXfOtaltGBgrwd199Ji-ExiQAWJoxGz5duifCA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
-          <TitleImage src="https://s3-alpha-sig.figma.com/img/3b7b/af0b/cc180bf1f7188eaecfe580c1638e7ef8?Expires=1673827200&Signature=TTYtzCQoe9J5HrYxiN1lSU8A7F01KggHTkSvYwK394LS1EUZHsjDq0gPPiNiiX8twmMPMdVTi2kd-pL6CEzf8dkjL~LGIj8cheioD9ML3RTznPWuMK6jOXhHKNjWm0ShUZRjPXPbslVt-qhz3p37GxklNkHshdUbQsQULG~xkRj7lSXoFM1~vfmzURrSMx30qr3DcSHWALlD6RrhOU~ELtYLdGh2zVYvdCjGUfLV5cZHSSOJsxEkW-DWPD0PV6FiD01LLE1RgImv1s1ZDjkDItqPefO~aOHGDiEKUR9JlzKNOsc6-850FuHLh5bz3pgsT1I9tsQmeOK76U3GIQbCSA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
-        </TitleImageBox>
         <RatingContainer>
           <Stars isRated={true} />
           <Stars isRated={true} />

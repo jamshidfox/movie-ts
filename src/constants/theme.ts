@@ -7,7 +7,8 @@ let theme = {
     lightColor: lightColor,
   },
   background: {
-    theme: "#1B0301",
+    theme: "#10272f",
+    footer: "#132d35",
   },
   mobile: {
     mobileScreenWidth: mobileScreenWidth,

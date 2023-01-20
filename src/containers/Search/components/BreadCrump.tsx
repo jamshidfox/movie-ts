@@ -2,17 +2,22 @@ import styled from "styled-components"
 import { Breadcrumb, BreadcrumbItem } from "reactstrap"
 
 const Container = styled.div``
+const BreadItem = styled(BreadcrumbItem)`
+  font-size: 12px;
+  & > a {
+    text-decoration: none;
+    color: white;
+  }
+`
+
 const BreadCrump = () => {
   return (
     <Container>
       <Breadcrumb>
-        <BreadcrumbItem>
+        <BreadItem>
           <a href="#">Home</a>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <a href="#">Library</a>
-        </BreadcrumbItem>
-        <BreadcrumbItem active>Data</BreadcrumbItem>
+        </BreadItem>
+        <BreadItem active>Search</BreadItem>
       </Breadcrumb>
     </Container>
   )
