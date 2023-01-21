@@ -31,8 +31,8 @@ const Container = styled("div")`
 const Content = styled.div`
   display: flex;
   justify-content: center;
-  width: 370px;
-  height: 220px;
+  width: 200px;
+  height: 240px;
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
@@ -48,6 +48,7 @@ const WatchTrailerContainer = styled("div")<prop>`
   background-image: url(${(p: prop) => p.backImg});
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  background-position: center;
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -146,11 +147,11 @@ const HorizontalSection: React.FC<Props> = ({ data }) => {
             />
           </Button>
         </ButtonContainer>
-        {data.map((movie: any, index: any) => {
+        {data.map((movie: any, index: number) => {
           return (
             <Content key={index} onClick={() => handleMovieClick(movie)}>
               <WatchTrailerContainer
-                backImg={movie.backdropPath}
+                backImg={movie.posterPath}
               ></WatchTrailerContainer>
             </Content>
           )
