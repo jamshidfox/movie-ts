@@ -9,17 +9,12 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": false,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "rootDir": "./",
-    "outDir": "dist"
-  },
-  "ts-node": {
-    "esm": true
+    "jsx": "react-jsx"
   },
   "include": ["src"]
 }

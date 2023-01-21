@@ -4,4 +4,4 @@ COPY package*.json .
 RUN npm install --force
 COPY . .
 RUN npm run build
-CMD ["node", "src/index.tsx"]
+CMD ["npm", "start"]
