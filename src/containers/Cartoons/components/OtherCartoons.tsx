@@ -23,7 +23,7 @@ const Content = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 160px;
+  height: 210px;
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
@@ -50,7 +50,7 @@ const WatchCartoonContainer = styled("div")<watchCartoonContainerProp>`
 const MovieContent = styled("div")`
   display: grid;
   padding: 20px 40px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 14px;
   flex-wrap: wrap;
 `
@@ -78,7 +78,7 @@ const OtherCartoons: React.FC<Props> = ({ data }) => {
         {data.map((movie: any, index: any) => (
           <Content key={1} onClick={() => handleMovieClick(movie)}>
             <WatchCartoonContainer
-              backImg={movie.backdropPath}
+              backImg={movie.posterPath}
             ></WatchCartoonContainer>
           </Content>
         ))}

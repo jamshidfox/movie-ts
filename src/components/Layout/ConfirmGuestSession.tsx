@@ -3,8 +3,11 @@ import styled from "styled-components"
 import { setCookie } from "../../utils/cookie"
 import axios from "axios"
 import * as API from "../../constants/api"
-
-const Container = styled.div``
+import { DesktopNavbar } from "../Navbar"
+import { Footer } from "../Footer"
+const Container = styled.div`
+  background-color: ${({ theme }) => theme.background.theme};
+`
 
 const ConfirmWithGuestSession = () => {
   const handleClick = (): void => {
@@ -17,7 +20,9 @@ const ConfirmWithGuestSession = () => {
 
   return (
     <Container>
+      <DesktopNavbar />
       <button onClick={handleClick}>Click me</button>
+      <Footer />
     </Container>
   )
 }
