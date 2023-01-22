@@ -43,6 +43,11 @@ const Content = styled.div`
   :hover {
     transform: scale(102%, 103%);
   }
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    width: 120px;
+    height: 190px;
+    margin: 0.5rem 0.6rem 0.5rem 0rem;
+  }
 `
 const WatchTrailerContainer = styled("div")<prop>`
   background-image: url(${(p: prop) => p.backImg});
@@ -70,7 +75,7 @@ const Button = styled.button`
 `
 const ContentWrapper = styled.div`
   display: flex;
-  overflow: hidden;
+  overflow-y: auto;
   width: 100%;
   padding-left: 10px;
   align-items: center;
@@ -78,8 +83,14 @@ const ContentWrapper = styled.div`
   border: 5px solid #10272f;
   scroll-behavior: smooth;
   border-radius: 10px;
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    height: 220px;
+  }
 `
 const ButtonContainer = styled("div")<BtnProps>`
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    display: none;
+  }
   display: flex;
   justify-content: center;
   align-items: center;

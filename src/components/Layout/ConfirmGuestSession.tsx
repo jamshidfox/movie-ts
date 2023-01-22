@@ -3,8 +3,6 @@ import styled from "styled-components"
 import { setCookie } from "../../utils/cookie"
 import axios from "axios"
 import * as API from "../../constants/api"
-import { DesktopNavbar } from "../Navbar"
-import { Footer } from "../Footer"
 const Container = styled.div`
   height: 100vh;
   background-image: url("https://wpengine-myanmore.s3.amazonaws.com/uploads/2019/05/netflix-background-9.jpg");
