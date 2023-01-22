@@ -12,9 +12,7 @@ const Container = styled(Row)`
   background-size: cover;
   color: pink;
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    width: 85%;
+    display: none;
   }
   resize: both;
 `
@@ -116,22 +114,6 @@ const Paragraph = styled.p`
   }
 `
 
-const TitleImageSub = styled("img")`
-  width: 150px;
-`
-const TitleImage = styled("img")`
-  width: 100%;
-`
-const TitleImageBox = styled("div")`
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
-    margin-top: 300px;
-  }
-`
 const WatchContainerImage = styled("img")`
   width: 55px;
   height: 55px;
