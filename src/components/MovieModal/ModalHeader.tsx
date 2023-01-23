@@ -46,6 +46,7 @@ const MovieImageBox = styled("div")<ImageProps>`
   /* box-shadow: inset 0px -20px 15px 1px #10272f; */
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   border-radius: 6px;
   width: 100%;
   height: 400px;
@@ -63,6 +64,9 @@ const MovieControlsContainer = styled("div")`
   > h4 {
     color: #fff;
     margin-bottom: 16px;
+  }
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    padding: 10px 20px;
   }
 `
 const MovieControls = styled("div")`

@@ -27,6 +27,10 @@ const PopularMoviesModal = styled(Modal)`
     border: 0;
     padding: 0;
   }
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    size: "sm";
+    top: 0;
+  }
 `
 
 const PopularMoviesModalBody = styled(ModalBody)`
@@ -40,7 +44,7 @@ const MovieInfo = styled("div")`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 20px 60px;
+  padding: 20px 30px;
   color: white;
 `
 const MovieInfoDescription = styled("div")``

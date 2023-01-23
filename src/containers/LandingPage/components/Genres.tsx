@@ -6,7 +6,11 @@ interface Props {
   genres: []
 }
 
-const Container = styled("div")``
+const Container = styled("div")`
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    display: none;
+  }
+`
 const Paragraph = styled("p")``
 const GenresContainer = styled("div")`
   width: 100%;
