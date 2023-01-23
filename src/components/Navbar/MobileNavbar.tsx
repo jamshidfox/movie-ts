@@ -6,6 +6,7 @@ const Container = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(180deg, #000, rgba(26, 26, 28, 0.1));
   width: 100%;
 `
 const Logo = styled.div`

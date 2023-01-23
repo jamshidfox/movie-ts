@@ -31,7 +31,7 @@ const Container = styled("div")`
 const Content = styled.div`
   display: flex;
   justify-content: center;
-  width: 200px;
+  width: 180px;
   height: 240px;
   background-size: cover;
   background-position: center;
@@ -45,8 +45,8 @@ const Content = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     width: 120px;
-    height: 190px;
-    margin: 0.5rem 0.6rem 0.5rem 0rem;
+    height: 180px;
+    margin: 0.1rem 0.3rem 0.1rem 0rem;
   }
 `
 const WatchTrailerContainer = styled("div")<prop>`
@@ -76,6 +76,11 @@ const Button = styled.button`
 const ContentWrapper = styled.div`
   display: flex;
   overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
   width: 100%;
   padding-left: 10px;
   align-items: center;
@@ -85,6 +90,7 @@ const ContentWrapper = styled.div`
   border-radius: 10px;
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     height: 220px;
+    padding: 0;
   }
 `
 const ButtonContainer = styled("div")<BtnProps>`

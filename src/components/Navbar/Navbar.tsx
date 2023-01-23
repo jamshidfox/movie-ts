@@ -11,11 +11,14 @@ const Container = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: sticky;
+  top: 0;
 `
 const Desktop = styled(Row)`
   align-items: center;
   padding: 0rem 1rem;
   margin: 0;
+  width: 100%;
   color: ${({ theme }) => theme.color.lightColor};
   background: linear-gradient(180deg, #10272f, rgba(26, 26, 28, 0.3));
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
