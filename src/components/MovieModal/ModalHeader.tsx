@@ -90,6 +90,10 @@ const WatchButton = styled(Button)`
     background-color: white;
     color: black;
   }
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    min-width: 100px;
+    padding: 0px 8px;
+  }
 `
 const BookAndShareButtons = styled("a")`
   padding: 8px 10px;
@@ -103,6 +107,9 @@ const MuteOrVolumeButton = styled("a")`
   border-radius: 8px;
   margin-right: 12px;
   margin-left: auto;
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    display: none;
+  }
 `
 
 const ModalHeader: React.FC<Props> = ({ toggle, data }) => {

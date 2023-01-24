@@ -7,6 +7,8 @@ interface Props {
   routes: []
 }
 
+//
+
 const App: React.FC<Props> = ({ routes, store }) => {
   return (
     <Provider store={store}>

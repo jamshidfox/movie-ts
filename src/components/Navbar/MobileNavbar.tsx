@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom"
 import { Bell, Play } from "react-feather"
+import * as ROUTES from "../../constants/routes"
 const Container = styled("div")`
   display: flex;
   flex-direction: column;
@@ -30,7 +31,14 @@ const Body = styled("div")`
   > h3 {
     color: white;
     font-size: 0.99rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
+    width: 120px;
+  }
+  > h3:hover {
+    color: red;
   }
 `
 
@@ -43,12 +51,12 @@ const MobileNavbar: React.FC = () => {
   return (
     <Container>
       <Header>
-        <Logo>M</Logo>
+        <Logo onClick={() => handleNavigateClick("/")}>M</Logo>
         <Bell style={{ margin: "1rem" }} color="white" />
       </Header>
       <Body>
-        <h3>Films</h3>
-        <h3>Series</h3>
+        <h3 onClick={() => handleNavigateClick("/")}>Films</h3>
+        <h3 onClick={() => handleNavigateClick(ROUTES.CARTOONS)}>Cartoons</h3>
         <h3>
           Category
           <Play
