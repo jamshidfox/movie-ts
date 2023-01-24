@@ -12,7 +12,6 @@ const Container = styled("div")`
   flex-direction: column;
   align-items: center;
   position: sticky;
-  width: 50%;
   top: 0;
 `
 const Desktop = styled(Row)`
