@@ -34,6 +34,10 @@ const Content = styled.div`
   :hover {
     transform: scale(102%, 103%);
   }
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    height: 120px;
+    margin: 0;
+  }
 `
 
 const WatchCartoonContainer = styled("div")<watchCartoonContainerProp>`
@@ -53,6 +57,10 @@ const MovieContent = styled("div")`
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 14px;
   flex-wrap: wrap;
+  @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
+    padding: 10px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
 `
 
 const HeadLine = styled.h2`

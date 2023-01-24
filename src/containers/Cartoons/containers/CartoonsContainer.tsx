@@ -4,6 +4,7 @@ import OtherCartoons from "../components/OtherCartoons"
 import { useFetchList } from "../../../hooks/useFetchList"
 import * as STATE from "../../../constants/stateNames"
 import { getCartoons } from "../actions/index"
+import { Footer } from "../../../components/Footer"
 interface PopularList {
   data?: [
     movie: {
