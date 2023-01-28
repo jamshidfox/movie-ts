@@ -24,15 +24,13 @@ const SearchInput: React.FC<Props> = ({ searchedValue, setSearchedValue }) => {
   }
   const submit = (e: any) => {
     e.preventDefault()
-    const json = { value: "Avatar" }
-    // axios({
-    //   method: "post",
-    //   url: `${API.SEARCH_MOVIE}`,
-    //   data: json,
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // }).then((d) => console.log(d))
+    axios
+      .get(API.SEARCH_MOVIE, {
+        params: {
+          value: searchedValue,
+        },
+      })
+      .then((data) => console.log(data))
   }
   return (
     <Container onSubmit={(e) => submit(e)}>
