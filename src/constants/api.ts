@@ -17,5 +17,4 @@ export const ACTION_MOVIES = `${DOMAIN_URL2}/action_movies/get_all`
 export const FANTASY_MOVIES = `${DOMAIN_URL2}/fantasy_movies/get_all`
 export const SCIENCE_FICTION_MOVIES = `${DOMAIN_URL2}/science_fiction_movies/get_all`
 export const CARTOONS = `${DOMAIN_URL2}/cartoons/get_all`
-// export const SEARCH_MOVIE = `${DOMAIN_URL2}/search`
-export const SEARCH_MOVIE = `http://localhost:8888/search`
+export const SEARCH_MOVIE = `${DOMAIN_URL2}/search`
