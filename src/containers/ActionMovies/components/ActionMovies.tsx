@@ -67,7 +67,8 @@ const HeadLine = styled.h2`
   color: white;
   margin-left: 40px;
 `
-const OtherCartoons: React.FC<Props> = ({ data }) => {
+const ActionMovies: React.FC<Props> = ({ data }) => {
+  console.log(data)
   let [movieInfo, setMovieInfo]: [any, any] = useState(0)
   const [modal, setModal] = useState(false)
 
@@ -94,4 +95,4 @@ const OtherCartoons: React.FC<Props> = ({ data }) => {
     </Container>
   )
 }
-export default OtherCartoons
+export default ActionMovies

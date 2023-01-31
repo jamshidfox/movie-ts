@@ -4,6 +4,7 @@ import * as API from "../../../constants/api"
 interface Props {
   searchedValue: string
   setSearchedValue: any
+  setSearchedResponse: any
 }
 const Container = styled("form")``
 const Input = styled("input")`
@@ -18,7 +19,11 @@ const Input = styled("input")`
     outline: none;
   }
 `
-const SearchInput: React.FC<Props> = ({ searchedValue, setSearchedValue }) => {
+const SearchInput: React.FC<Props> = ({
+  searchedValue,
+  setSearchedValue,
+  setSearchedResponse,
+}) => {
   const handleInputChange = (e: any) => {
     setSearchedValue(e.target.value)
   }
@@ -30,7 +35,7 @@ const SearchInput: React.FC<Props> = ({ searchedValue, setSearchedValue }) => {
           value: searchedValue,
         },
       })
-      .then((data) => console.log(data))
+      .then((data) => setSearchedResponse(data))
   }
   return (
     <Container onSubmit={(e) => submit(e)}>

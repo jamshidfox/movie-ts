@@ -2,8 +2,6 @@ import { Routes, Route } from "react-router-dom"
 import React from "react"
 import styled from "styled-components"
 import EmptyQuery from "./EmptyQuery"
-import { DesktopNavbar } from "./Navbar"
-import { Footer } from "./Footer"
 import BaseLayout from "./Layout/BaseLayout"
 
 const Container = styled("div")`

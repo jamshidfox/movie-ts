@@ -3,7 +3,7 @@ import styled from "styled-components"
 import OtherCartoons from "../components/OtherCartoons"
 import { useFetchList } from "../../../hooks/useFetchList"
 import * as STATE from "../../../constants/stateNames"
-import { getCartoons } from "../actions/index"
+import { getWarMovies } from "../actions/index"
 interface PopularList {
   data?: [
     movie: {
@@ -16,10 +16,10 @@ const Container = styled.div`
   margin-top: 2rem;
 `
 
-const CartoonsContainer: React.FC = () => {
+const WarContanier: React.FC = () => {
   const cartoonMovies = () => ({
-    action: getCartoons,
-    stateName: STATE.CARTOONS,
+    action: getWarMovies,
+    stateName: STATE.WAR_MOVIES,
   })
   const cartoonList: PopularList = useFetchList(cartoonMovies()) as {}
   return (
@@ -29,4 +29,4 @@ const CartoonsContainer: React.FC = () => {
   )
 }
 
-export default CartoonsContainer
+export default WarContanier
