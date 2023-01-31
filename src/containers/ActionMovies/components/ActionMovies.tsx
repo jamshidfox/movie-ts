@@ -68,14 +68,12 @@ const HeadLine = styled.h2`
   margin-left: 40px;
 `
 const ActionMovies: React.FC<Props> = ({ data }) => {
-  console.log(data)
   let [movieInfo, setMovieInfo]: [any, any] = useState(0)
   const [modal, setModal] = useState(false)
 
   const handleMovieClick = (movie: any) => {
     setMovieInfo(movie)
     setModal(true)
-    // navigate(`${ROUTES.SEARCHED_MOVIE}?id=${movie.id}`)
   }
   const toggle = () => setModal(!modal)
 

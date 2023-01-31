@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Row, Col } from "reactstrap"
-
+import { IoIosPlayCircle, IoMdAddCircle } from "react-icons/io"
 const Container = styled(Row)`
   display: flex;
   flex-direction: column;
@@ -104,6 +104,10 @@ const WatchContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: none;
   }
+  > .icons {
+    color: red;
+    font-size: 4rem;
+  }
 `
 const Paragraph = styled.p`
   margin-top: 2rem;
@@ -112,12 +116,6 @@ const Paragraph = styled.p`
   @media (max-width: ${({ theme }) => theme.mobile.mobileScreenWidth}) {
     display: none;
   }
-`
-
-const WatchContainerImage = styled("img")`
-  width: 55px;
-  height: 55px;
-  margin-right: 10px;
 `
 
 const ShadowElement = styled("div")`
@@ -148,8 +146,8 @@ const HeadMovieInfo: React.FC = () => {
           <TypeOfMovieEl>SCI-FL</TypeOfMovieEl>
         </TypeOfMovieContainer>
         <WatchContainer>
-          <WatchContainerImage src="https://s3-alpha-sig.figma.com/img/a696/fb16/912e09903c6be4539f472f894ee36dc5?Expires=1673827200&Signature=HlVhozHYjoDplTVZ9Iudjx64OpomD4YWqVQXNMMCYTjBPRGHujlL9tXpOknUxiNDb3XwJFQNc5pCSnahgm96PUh8BuPla47KJGe~n2Z65F~XoFE6HaTrssXzO26Vi~I6-C32KiV4DEjakuPfQq2bsRiXUPfCPnO3yuTXd6T5C7TXCgDdEH4AdDF05UKgoskNkuYP9idVfCvaLHkYnmjJeL2gVY1HubocqocxadfKvFB-Lz0WWbCGWSOryFJrXPpHRrjJLmBMJj5T~eZYW5d7xx-Egpn6F3UIxq1JS-z1-tDJa2SXQ9N8IU0SzbfghsJWZDz5IBVZfu9Q2vTSvHa-sw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
-          <WatchContainerImage src="https://s3-alpha-sig.figma.com/img/810d/3c9a/a9f595d45648de4994057ef7ce47d0de?Expires=1673827200&Signature=I05LXJcWZ9nMioXJgiHSOJSUk1eORD80DhIDt-~Pqw~pGgieUmmtfhcBPvWJTU~I6JGObn6yP0V74xOPgg5CzgkpSdGuCzKLyDMoqsWDIM2OKX9BwclyIY-CjhLcLHJZzzbCUYkJOLFXSR-zEiISJ97viSvle9AJfaF2gDibewBkw7bkVpO9zW7JWaafsZ3G8t2NkE8s0mA8L3UXYp28oNxC-ZsMnf~ZJ4IBIaD-3wJlO6Ni-ZMES3IhLzUT93wvlSIal15SmT8PtR5SmZ2QOthyloPzYf4sHzQb7yN0oazYbMH1inqx2JePNbOh-9nDug7aNc45OQ6CQKy4qAniwg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+          <IoIosPlayCircle className="icons" />
+          <IoMdAddCircle className="icons" />
         </WatchContainer>
         <Paragraph>
           Natasha Romanoff, aka Black Widow, confronts the darker parts of her
