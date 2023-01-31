@@ -4,6 +4,7 @@ import cartoons from "./Cartoons"
 import search from "./Search"
 import horrorMovies from "./HorrorMovies"
 import warMovies from "./WarMovies"
+import trendingMovies from "./TrendingMovies"
 
 const tester = () => [
   ...landingPage(),
@@ -11,6 +12,7 @@ const tester = () => [
   ...cartoons(),
   ...horrorMovies(),
   ...warMovies(),
+  ...trendingMovies(),
   ...search(),
 ]
 const Routes = () => [...tester()]
