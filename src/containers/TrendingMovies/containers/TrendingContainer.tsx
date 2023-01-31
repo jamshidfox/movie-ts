@@ -19,7 +19,7 @@ const Container = styled.div`
 const CartoonsContainer: React.FC = () => {
   const cartoonMovies = () => ({
     action: getCartoons,
-    stateName: STATE.CARTOONS,
+    stateName: STATE.TRENDING_MOVIES,
   })
   const cartoonList: PopularList = useFetchList(cartoonMovies()) as {}
   return (

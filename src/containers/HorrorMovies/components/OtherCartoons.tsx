@@ -80,7 +80,7 @@ const OtherCartoons: React.FC<Props> = ({ data }) => {
 
   return (
     <Container>
-      <HeadLine>Cartoons</HeadLine>
+      <HeadLine>Horror</HeadLine>
       <MovieContent>
         {data.map((movie: any, index: any) => (
           <Content key={1} onClick={() => handleMovieClick(movie)}>

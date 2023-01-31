@@ -9,13 +9,13 @@ import axios, {
 export const getCartoons = (id: any, data: any) => {
   return (dispatch: any, getState: any) => {
     const payload = axios({ dispatch, getState })
-      .get(sprintf(API.CARTOONS, id), data)
+      .get(sprintf(API.TRENDING_MOVIES, id), data)
       .then(getPayloadFromSuccess)
       .catch(getPayloadFromError)
 
     return dispatch({
       payload,
-      type: actionTypes.CARTOONS,
+      type: actionTypes.TRENDING_MOVIES,
     })
   }
 }

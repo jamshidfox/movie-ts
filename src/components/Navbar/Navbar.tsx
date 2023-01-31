@@ -97,7 +97,9 @@ const DesktopNavbar: React.FC = () => {
           <Genres onClick={() => handleNavigateClick(ROUTES.WAR_MOVIES)}>
             War
           </Genres>
-          <Genres>Trending</Genres>
+          <Genres onClick={() => handleNavigateClick(ROUTES.TRENDING_MOVIES)}>
+            Trending
+          </Genres>
         </GenresContainer>
         <SignContainer token={!token}>
           <Sign>Sign In</Sign>

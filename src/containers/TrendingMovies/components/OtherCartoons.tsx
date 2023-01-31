@@ -68,7 +68,6 @@ const HeadLine = styled.h2`
   margin-left: 40px;
 `
 const OtherCartoons: React.FC<Props> = ({ data }) => {
-  console.log(data)
   let [movieInfo, setMovieInfo]: [any, any] = useState(0)
   const [modal, setModal] = useState(false)
 
@@ -81,7 +80,7 @@ const OtherCartoons: React.FC<Props> = ({ data }) => {
 
   return (
     <Container>
-      <HeadLine>Cartoons</HeadLine>
+      <HeadLine>Trending movies</HeadLine>
       <MovieContent>
         {data.map((movie: any, index: any) => (
           <Content key={1} onClick={() => handleMovieClick(movie)}>
