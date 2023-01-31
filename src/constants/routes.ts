@@ -1,4 +1,6 @@
 export const LANDING_PAGE = "/"
 export const SEARCHED_MOVIE = "/searched_movie"
 export const CARTOONS = "/category/cartoons"
+export const WAR_MOVIES = "/category/war_movies"
+export const HORROR_MOVIES = "/category/horror_movies"
 export const SEARCH = "/search"

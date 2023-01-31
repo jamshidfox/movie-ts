@@ -18,6 +18,7 @@ export const makeRootReducer = (asyncReducers) => {
       actionTypes.SCIENCE_FICTION
     ),
     [STATE.GENRES]: createThunkReducer(actionTypes.GENRES),
+    [STATE.HORROR_MOVIES]: createThunkReducer(actionTypes.HORROR_MOVIES),
     ...asyncReducers,
   })
 }

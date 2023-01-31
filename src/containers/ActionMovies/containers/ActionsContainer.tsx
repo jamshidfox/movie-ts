@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import OtherCartoons from "../components/OtherCartoons"
+import OtherCartoons from "../components/ActionMovies"
 import { useFetchList } from "../../../hooks/useFetchList"
 import * as STATE from "../../../constants/stateNames"
 import { getCartoons } from "../actions/index"

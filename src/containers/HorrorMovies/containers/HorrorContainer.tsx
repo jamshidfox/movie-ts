@@ -3,7 +3,7 @@ import styled from "styled-components"
 import OtherCartoons from "../components/OtherCartoons"
 import { useFetchList } from "../../../hooks/useFetchList"
 import * as STATE from "../../../constants/stateNames"
-import { getCartoons } from "../actions/index"
+import { getHorror } from "../actions/index"
 interface PopularList {
   data?: [
     movie: {
@@ -18,8 +18,8 @@ const Container = styled.div`
 
 const CartoonsContainer: React.FC = () => {
   const cartoonMovies = () => ({
-    action: getCartoons,
-    stateName: STATE.CARTOONS,
+    action: getHorror,
+    stateName: STATE.HORROR_MOVIES,
   })
   const cartoonList: PopularList = useFetchList(cartoonMovies()) as {}
   return (

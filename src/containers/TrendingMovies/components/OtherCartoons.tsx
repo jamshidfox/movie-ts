@@ -68,6 +68,7 @@ const HeadLine = styled.h2`
   margin-left: 40px;
 `
 const OtherCartoons: React.FC<Props> = ({ data }) => {
+  console.log(data)
   let [movieInfo, setMovieInfo]: [any, any] = useState(0)
   const [modal, setModal] = useState(false)
 

@@ -113,7 +113,6 @@ const MuteOrVolumeButton = styled("a")`
 `
 
 const ModalHeader: React.FC<Props> = ({ toggle, data }) => {
-  console.log(data)
   const navigate = useNavigate()
   const handleMovieClick = (id: string | null | number) => {
     navigate(`/searched_movie?id=${id}`)

@@ -6,12 +6,7 @@ interface watchCartoonContainerProp {
   backImg: string
 }
 interface Props {
-  data: [
-    movie: {
-      backdropPath: string
-    },
-    index: number
-  ]
+  data: any
 }
 
 const Container = styled.div`
@@ -59,11 +54,10 @@ const HeadLine = styled.h2`
   color: white;
   margin-left: 40px;
 `
-const OtherCartoons: React.FC<Props> = ({ data }) => {
-  console.log(data)
+const RecommendContainer: React.FC<Props> = ({ data }) => {
   let [movieInfo, setMovieInfo]: [any, any] = useState(0)
   const [modal, setModal] = useState(false)
-
+  // console.log(data.data)
   const handleMovieClick = (movie: any) => {
     setMovieInfo(movie)
     setModal(true)
@@ -75,7 +69,7 @@ const OtherCartoons: React.FC<Props> = ({ data }) => {
     <Container>
       <HeadLine>Cartoons</HeadLine>
       <MovieContent>
-        {data.map((movie: any, index: any) => (
+        {data.data.map((movie: any, index: any) => (
           <Content key={1} onClick={() => handleMovieClick(movie)}>
             <WatchCartoonContainer
               backImg={movie.backdropPath}
@@ -87,4 +81,4 @@ const OtherCartoons: React.FC<Props> = ({ data }) => {
     </Container>
   )
 }
-export default OtherCartoons
+export default RecommendContainer

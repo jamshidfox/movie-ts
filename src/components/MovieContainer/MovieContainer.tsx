@@ -31,7 +31,7 @@ const Container = styled("div")`
 const Content = styled.div`
   display: flex;
   justify-content: center;
-  width: 180px;
+  width: 170px;
   height: 240px;
   background-size: cover;
   background-position: center;
@@ -82,7 +82,6 @@ const ContentWrapper = styled.div`
   }
 
   width: 100%;
-  padding-left: 10px;
   align-items: center;
   height: 350px;
   border: 5px solid #10272f;

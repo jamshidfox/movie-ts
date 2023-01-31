@@ -13,6 +13,7 @@ export const DOMAIN_URL2 = "https://jk-tv.netlify.app"
 export const POPULAR_MOVIES = `${DOMAIN_URL2}/popular_movies/get_all`
 export const TRENDING_MOVIES = `${DOMAIN_URL2}/trending_movies/get_all`
 export const WAR_MOVIES = `${DOMAIN_URL2}/war_movies/get_all`
+export const HORROR_MOVIES = `${DOMAIN_URL2}/horror_movies/get_all`
 export const ACTION_MOVIES = `${DOMAIN_URL2}/action_movies/get_all`
 export const FANTASY_MOVIES = `${DOMAIN_URL2}/fantasy_movies/get_all`
 export const SCIENCE_FICTION_MOVIES = `${DOMAIN_URL2}/science_fiction_movies/get_all`
