@@ -74,7 +74,6 @@ const OtherCartoons: React.FC<Props> = ({ data }) => {
   const handleMovieClick = (movie: any) => {
     setMovieInfo(movie)
     setModal(true)
-    // navigate(`${ROUTES.SEARCHED_MOVIE}?id=${movie.id}`)
   }
   const toggle = () => setModal(!modal)
 
